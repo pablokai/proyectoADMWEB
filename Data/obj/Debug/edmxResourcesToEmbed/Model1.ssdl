@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PROYECTO_SITIOSWEBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AREA">
+    <Key>
+      <PropertyRef Name="IDAREA" />
+    </Key>
+    <Property Name="IDAREA" Type="int" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMPONENTES">
+    <Key>
+      <PropertyRef Name="IDCOMPONENTE" />
+    </Key>
+    <Property Name="IDCOMPONENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DEPARTAMENTOS">
+    <Key>
+      <PropertyRef Name="IDDEPARTAMENTO" />
+    </Key>
+    <Property Name="IDDEPARTAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EJES">
+    <Key>
+      <PropertyRef Name="IDEJE" />
+    </Key>
+    <Property Name="IDEJE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="EVALUACIONES">
+    <Key>
+      <PropertyRef Name="IDEVALUACION" />
+    </Key>
+    <Property Name="IDEVALUACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AREA" Type="int" Nullable="false" />
+    <Property Name="FECHA" Type="date" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EVIDENCIAS">
+    <Key>
+      <PropertyRef Name="IDREGISTRO" />
+    </Key>
+    <Property Name="IDREGISTRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDPERIODO" Type="int" Nullable="false" />
+    <Property Name="IDPUNTO" Type="int" Nullable="false" />
+    <Property Name="LINKEVIDENCIA" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="ESTADO" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NIVELES">
+    <Key>
+      <PropertyRef Name="IDNIVELES" />
+    </Key>
+    <Property Name="IDNIVELES" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="PERIODOS">
+    <Key>
+      <PropertyRef Name="IDPERIODO" />
+    </Key>
+    <Property Name="IDPERIODO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FECHAINICIO" Type="date" Nullable="false" />
+    <Property Name="FECHAFINAL" Type="date" Nullable="false" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IDEVALUACION" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PUNTOS_EVALUACION">
+    <Key>
+      <PropertyRef Name="IDREGISTRO" />
+    </Key>
+    <Property Name="IDREGISTRO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDEVALUACION" Type="int" Nullable="false" />
+    <Property Name="IDCOMPONENTE" Type="int" Nullable="false" />
+    <Property Name="IDEJE" Type="int" Nullable="false" />
+    <Property Name="IDNIVEL" Type="int" Nullable="false" />
+    <Property Name="NUMEROACTIVIDAD" Type="int" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="OBLIGATORIO" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ROLES">
+    <Key>
+      <PropertyRef Name="IDROL" />
+    </Key>
+    <Property Name="IDROL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SOLICITUD_ROL">
+    <Key>
+      <PropertyRef Name="CODIGO" />
+    </Key>
+    <Property Name="CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IDUSUARIO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ROL" Type="int" Nullable="false" />
+    <Property Name="AREA" Type="int" />
+    <Property Name="DEPARTAMENTO" Type="int" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="IDUSUARIO" />
+    </Key>
+    <Property Name="IDUSUARIO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PRIMERAPELLIDO" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="SEGUNDOAPELLIDO" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NOMBREUSUARIO" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CORREO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="TELEFONO" Type="int" Nullable="false" />
+    <Property Name="CONTRASENA" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="AREA" Type="int" />
+    <Property Name="DEPARTAMENTO" Type="int" />
+    <Property Name="ROL" Type="int" />
+  </EntityType>
+  <Association Name="FK_EVALUACIONES_AREA">
+    <End Role="AREA" Type="Self.AREA" Multiplicity="1" />
+    <End Role="EVALUACIONES" Type="Self.EVALUACIONES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AREA">
+        <PropertyRef Name="IDAREA" />
+      </Principal>
+      <Dependent Role="EVALUACIONES">
+        <PropertyRef Name="AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EVIDENCIAS_PERIODOS">
+    <End Role="PERIODOS" Type="Self.PERIODOS" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERIODOS">
+        <PropertyRef Name="IDPERIODO" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="IDPERIODO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EVIDENCIAS_PUNTOS_EVALUACION">
+    <End Role="PUNTOS_EVALUACION" Type="Self.PUNTOS_EVALUACION" Multiplicity="1" />
+    <End Role="EVIDENCIAS" Type="Self.EVIDENCIAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PUNTOS_EVALUACION">
+        <PropertyRef Name="IDREGISTRO" />
+      </Principal>
+      <Dependent Role="EVIDENCIAS">
+        <PropertyRef Name="IDPUNTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PERIODOS_EVALUACIONES">
+    <End Role="EVALUACIONES" Type="Self.EVALUACIONES" Multiplicity="1" />
+    <End Role="PERIODOS" Type="Self.PERIODOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVALUACIONES">
+        <PropertyRef Name="IDEVALUACION" />
+      </Principal>
+      <Dependent Role="PERIODOS">
+        <PropertyRef Name="IDEVALUACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PUNTOS_EVALUACION_COMPONENTES">
+    <End Role="COMPONENTES" Type="Self.COMPONENTES" Multiplicity="1" />
+    <End Role="PUNTOS_EVALUACION" Type="Self.PUNTOS_EVALUACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMPONENTES">
+        <PropertyRef Name="IDCOMPONENTE" />
+      </Principal>
+      <Dependent Role="PUNTOS_EVALUACION">
+        <PropertyRef Name="IDCOMPONENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PUNTOS_EVALUACION_EJES">
+    <End Role="EJES" Type="Self.EJES" Multiplicity="1" />
+    <End Role="PUNTOS_EVALUACION" Type="Self.PUNTOS_EVALUACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EJES">
+        <PropertyRef Name="IDEJE" />
+      </Principal>
+      <Dependent Role="PUNTOS_EVALUACION">
+        <PropertyRef Name="IDEJE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PUNTOS_EVALUACION_EVALUACIONES">
+    <End Role="EVALUACIONES" Type="Self.EVALUACIONES" Multiplicity="1" />
+    <End Role="PUNTOS_EVALUACION" Type="Self.PUNTOS_EVALUACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EVALUACIONES">
+        <PropertyRef Name="IDEVALUACION" />
+      </Principal>
+      <Dependent Role="PUNTOS_EVALUACION">
+        <PropertyRef Name="IDEVALUACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PUNTOS_EVALUACION_NIVELES">
+    <End Role="NIVELES" Type="Self.NIVELES" Multiplicity="1" />
+    <End Role="PUNTOS_EVALUACION" Type="Self.PUNTOS_EVALUACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NIVELES">
+        <PropertyRef Name="IDNIVELES" />
+      </Principal>
+      <Dependent Role="PUNTOS_EVALUACION">
+        <PropertyRef Name="IDNIVEL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_ROL_AREA">
+    <End Role="AREA" Type="Self.AREA" Multiplicity="0..1" />
+    <End Role="SOLICITUD_ROL" Type="Self.SOLICITUD_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AREA">
+        <PropertyRef Name="IDAREA" />
+      </Principal>
+      <Dependent Role="SOLICITUD_ROL">
+        <PropertyRef Name="AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_ROL_DEPARTAMENTOS">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="0..1" />
+    <End Role="SOLICITUD_ROL" Type="Self.SOLICITUD_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="IDDEPARTAMENTO" />
+      </Principal>
+      <Dependent Role="SOLICITUD_ROL">
+        <PropertyRef Name="DEPARTAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SOLICITUD_ROL_ROLES">
+    <End Role="ROLES" Type="Self.ROLES" Multiplicity="1" />
+    <End Role="SOLICITUD_ROL" Type="Self.SOLICITUD_ROL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="IDROL" />
+      </Principal>
+      <Dependent Role="SOLICITUD_ROL">
+        <PropertyRef Name="ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_AREA">
+    <End Role="AREA" Type="Self.AREA" Multiplicity="0..1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AREA">
+        <PropertyRef Name="IDAREA" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="AREA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_DEPARTAMENTOS">
+    <End Role="DEPARTAMENTOS" Type="Self.DEPARTAMENTOS" Multiplicity="0..1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DEPARTAMENTOS">
+        <PropertyRef Name="IDDEPARTAMENTO" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="DEPARTAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USUARIOS_ROLES">
+    <End Role="ROLES" Type="Self.ROLES" Multiplicity="0..1" />
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROLES">
+        <PropertyRef Name="IDROL" />
+      </Principal>
+      <Dependent Role="USUARIOS">
+        <PropertyRef Name="ROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PROYECTO_SITIOSWEBModelStoreContainer">
+    <EntitySet Name="AREA" EntityType="Self.AREA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMPONENTES" EntityType="Self.COMPONENTES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DEPARTAMENTOS" EntityType="Self.DEPARTAMENTOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EJES" EntityType="Self.EJES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVALUACIONES" EntityType="Self.EVALUACIONES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EVIDENCIAS" EntityType="Self.EVIDENCIAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NIVELES" EntityType="Self.NIVELES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PERIODOS" EntityType="Self.PERIODOS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PUNTOS_EVALUACION" EntityType="Self.PUNTOS_EVALUACION" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ROLES" EntityType="Self.ROLES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SOLICITUD_ROL" EntityType="Self.SOLICITUD_ROL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_EVALUACIONES_AREA" Association="Self.FK_EVALUACIONES_AREA">
+      <End Role="AREA" EntitySet="AREA" />
+      <End Role="EVALUACIONES" EntitySet="EVALUACIONES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EVIDENCIAS_PERIODOS" Association="Self.FK_EVIDENCIAS_PERIODOS">
+      <End Role="PERIODOS" EntitySet="PERIODOS" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EVIDENCIAS_PUNTOS_EVALUACION" Association="Self.FK_EVIDENCIAS_PUNTOS_EVALUACION">
+      <End Role="PUNTOS_EVALUACION" EntitySet="PUNTOS_EVALUACION" />
+      <End Role="EVIDENCIAS" EntitySet="EVIDENCIAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PERIODOS_EVALUACIONES" Association="Self.FK_PERIODOS_EVALUACIONES">
+      <End Role="EVALUACIONES" EntitySet="EVALUACIONES" />
+      <End Role="PERIODOS" EntitySet="PERIODOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PUNTOS_EVALUACION_COMPONENTES" Association="Self.FK_PUNTOS_EVALUACION_COMPONENTES">
+      <End Role="COMPONENTES" EntitySet="COMPONENTES" />
+      <End Role="PUNTOS_EVALUACION" EntitySet="PUNTOS_EVALUACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PUNTOS_EVALUACION_EJES" Association="Self.FK_PUNTOS_EVALUACION_EJES">
+      <End Role="EJES" EntitySet="EJES" />
+      <End Role="PUNTOS_EVALUACION" EntitySet="PUNTOS_EVALUACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PUNTOS_EVALUACION_EVALUACIONES" Association="Self.FK_PUNTOS_EVALUACION_EVALUACIONES">
+      <End Role="EVALUACIONES" EntitySet="EVALUACIONES" />
+      <End Role="PUNTOS_EVALUACION" EntitySet="PUNTOS_EVALUACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PUNTOS_EVALUACION_NIVELES" Association="Self.FK_PUNTOS_EVALUACION_NIVELES">
+      <End Role="NIVELES" EntitySet="NIVELES" />
+      <End Role="PUNTOS_EVALUACION" EntitySet="PUNTOS_EVALUACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_ROL_AREA" Association="Self.FK_SOLICITUD_ROL_AREA">
+      <End Role="AREA" EntitySet="AREA" />
+      <End Role="SOLICITUD_ROL" EntitySet="SOLICITUD_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_ROL_DEPARTAMENTOS" Association="Self.FK_SOLICITUD_ROL_DEPARTAMENTOS">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="SOLICITUD_ROL" EntitySet="SOLICITUD_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SOLICITUD_ROL_ROLES" Association="Self.FK_SOLICITUD_ROL_ROLES">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="SOLICITUD_ROL" EntitySet="SOLICITUD_ROL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_AREA" Association="Self.FK_USUARIOS_AREA">
+      <End Role="AREA" EntitySet="AREA" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_DEPARTAMENTOS" Association="Self.FK_USUARIOS_DEPARTAMENTOS">
+      <End Role="DEPARTAMENTOS" EntitySet="DEPARTAMENTOS" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USUARIOS_ROLES" Association="Self.FK_USUARIOS_ROLES">
+      <End Role="ROLES" EntitySet="ROLES" />
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

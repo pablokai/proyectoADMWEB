@@ -1,0 +1,56 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+
+
+.unocompleto {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+/*    padding: 20px;
+*/    width: 40%;
+/*    margin: 20px;
+*/    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+    height: 820px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    text-align: center;
+}
+.box {
+    left: auto;
+    color: whitesmoke;
+    width: 250px;
+    height: 30px;
+    background: #38393a;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid 2px #38393a;
+}
+
+
+.btn {
+    left: auto;
+    color: whitesmoke;
+    width: 180px;
+    height: 50px;
+    background: #6846ec;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 6px;
+    border-color: #6846ec;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+    .btn:hover {
+        background: #2bebc8;
+        border-color: #2bebc8;
+        color: #000000;
+    }

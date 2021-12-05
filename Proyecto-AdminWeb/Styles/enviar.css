@@ -1,0 +1,160 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --MORADO: #6846ec;
+    --VERDE: #2bebc8;
+    --NEGROCLARO: #27292d;
+    --NEGROINTERMEDIO: #1e1f23;
+    --NEGROOSCURO: #151718;
+    --NEGROPURO: #0d0c0f;
+    /*OPCIONAL*/
+    --GRIS: #6a6a6a;
+    --BLANCO: #FFF;
+    --ROJO: #e10049;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    font-family: Poppins;
+    /*background: url(../Images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;*/
+    padding: 10px;
+    padding-top: 0;
+    background: #27292d;
+}
+
+h1 {
+    color: white;
+}
+
+
+
+.btn {
+    border: 2px solid transparent;
+    background: #2bebc8;
+    color: #27292d;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 0px;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 360px;
+    height: 40px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+
+    .btn:hover {
+        background-color: #6846ec !important;
+        opacity: 0.9;
+        color: #fff;
+    }
+
+
+
+    .btn:hover {
+        background-color: #2980B9;
+    }
+
+p{
+    color: white;
+}
+
+.num {
+    font-weight: 700;
+    font-size: 40px;
+    color: #2bebc8;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+
+.bloque1 {
+    display: block;
+}
+
+.bloque2 {
+    display: block;
+}
+
+
+.bloque3 {
+    display: block;
+}
+
+.lbl {
+    font-weight: 700;
+    font-size: 25px;
+    color: #2bebc8;
+    padding: 5px;
+    border-radius: 5px;
+    line-height: 60px;
+}
+
+.lbl2 {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2bebc8;
+    background-color: #151718;
+    padding: 5px;
+    border: solid 2px #151718;
+    border-radius: 5px;
+    line-height: 50px;
+}
+
+.lbltext {
+    font-weight: 700;
+    font-size: 15px;
+    color: #FFF;
+    padding: 5px;
+    line-height: 50px;
+}
+
+.lblError {
+    font-weight: 600;
+    color: white;
+}
+
+
+.texto {
+    height: 200px;
+    background-color: #151718;
+    border: 2px solid #151718;
+    border-radius: 3px;
+    font-size: 18px;
+    font-weight: 200;
+    width: 400px;
+    transition: border .5s;
+    color: white;
+    display: block;
+    text-align: left;
+}
+
+
+
+    .texto:focus {
+        background-color: #0d0c0f;
+        border: 2px solid #2bebc8;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 200;
+    }
+
+    .texto:active {
+        background-color: #0d0c0f;
+        border: 2px solid #6846ec;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: 200;
+    }

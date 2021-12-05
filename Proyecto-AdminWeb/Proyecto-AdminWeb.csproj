@@ -1,0 +1,547 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2740529D-A2B4-4FFC-8EE0-9E9621CAE452}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Proyecto_AdminWeb</RootNamespace>
+    <AssemblyName>Proyecto-AdminWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Admin.Directory.directory_v1, Version=1.55.0.2497, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Admin.Directory.directory_v1.1.55.0.2497\lib\net45\Google.Apis.Admin.Directory.directory_v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.55.0\lib\net461\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.55.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.55.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.55.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\2755755 %281%29.jpg" />
+    <Content Include="Images\4emu.gif" />
+    <Content Include="Images\4tJ8.gif" />
+    <Content Include="Images\actividad.png" />
+    <Content Include="Images\ambiente.png" />
+    <Content Include="Images\campaign.jpg" />
+    <Content Include="Images\charles-forerunner-3fPXt37X6UQ-unsplash.jpg" />
+    <Content Include="Images\competente.jpg" />
+    <Content Include="Images\develop.svg" />
+    <Content Include="Images\diestro.jpg" />
+    <Content Include="Images\document.png" />
+    <Content Include="Images\employee-of-the-month.png" />
+    <Content Include="Images\experto.jpg" />
+    <Content Include="Images\files.svg" />
+    <Content Include="Images\FORMAS.png" />
+    <Content Include="Images\fotis.jpg" />
+    <Content Include="Images\google-forms.png" />
+    <Content Include="Images\iconhead.png" />
+    <Content Include="Images\imginicio.png" />
+    <Content Include="Images\incipiente.jpg" />
+    <Content Include="Images\kaleidico.jpg" />
+    <Content Include="Images\logo.svg" />
+    <Content Include="Images\logoicon.png" />
+    <Content Include="Images\logooriginal.png" />
+    <Content Include="Images\logo_cuc.png" />
+    <Content Include="Images\marvin.jpg" />
+    <Content Include="Images\meeting.jpg" />
+    <Content Include="Images\morado.gif" />
+    <Content Include="Images\novato.jpg" />
+    <Content Include="Images\officer.png" />
+    <Content Include="Images\online.svg" />
+    <Content Include="Images\personal.svg" />
+    <Content Include="Images\personal2.svg" />
+    <Content Include="Images\riesgo-biologico.png" />
+    <Content Include="Images\schedule.png" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\Seguimiento.png" />
+    <Content Include="Images\settings.png" />
+    <Content Include="Images\profileheader.svg" />
+    <Content Include="Images\registro.svg" />
+    <Content Include="Images\sistemas.png" />
+    <Content Include="Images\stephen.jpg" />
+    <Content Include="Images\stil.jpg" />
+    <Content Include="Images\SVKl.gif" />
+    <Content Include="Images\test%281%29.png" />
+    <Content Include="Images\test.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\videocover.mp4" />
+    <Content Include="Images\work.svg" />
+    <Content Include="PagesAdmin\AsignarRoles.aspx" />
+    <Content Include="PagesAdmin\index.aspx" />
+    <Content Include="PagesAdmin\plantilla.aspx" />
+    <Content Include="PagesAdmin\VerUsuarios.aspx" />
+    <Content Include="PagesDirector\AperturayCierre.aspx" />
+    <Content Include="PagesDirector\config.aspx" />
+    <Content Include="PagesDirector\DefinirEvaluacion.aspx" />
+    <Content Include="PagesDirector\Formulario.aspx" />
+    <Content Include="PagesDirector\HistorialEV.aspx" />
+    <Content Include="PagesDirector\HistorialEvaluaciones.aspx" />
+    <Content Include="PagesDirector\index.aspx" />
+    <Content Include="PagesEmpleado\index.aspx" />
+    <Content Include="PagesFiscalizador\configFisca.aspx" />
+    <Content Include="PagesFiscalizador\HistorialFiscalizador.aspx" />
+    <Content Include="PagesFiscalizador\index.aspx" />
+    <Content Include="PagesFiscalizador\Observaciones.aspx" />
+    <Content Include="PagesFiscalizador\Respuestas.aspx" />
+    <Content Include="PagesFiscalizador\Revisar.aspx" />
+    <Content Include="PagesFiscalizador\Revisiones.aspx" />
+    <Content Include="PagesInicio\Espera.aspx" />
+    <Content Include="PagesInicio\Home.aspx" />
+    <Content Include="PagesInicio\LandingPage.aspx" />
+    <Content Include="PagesInicio\Login.aspx" />
+    <Content Include="PagesInicio\PaginaSinRol.aspx" />
+    <Content Include="PagesInicio\Registro.aspx" />
+    <Content Include="PagesJefe\AsignarEvidencia.aspx" />
+    <Content Include="PagesJefe\AsignarEvidencias.aspx" />
+    <Content Include="PagesJefe\CargaEvaluacion.aspx" />
+    <Content Include="PagesJefe\configjefe.aspx" />
+    <Content Include="PagesJefe\Enviar.aspx" />
+    <Content Include="PagesJefe\Evidencias.aspx" />
+    <Content Include="PagesJefe\index.aspx" />
+    <Content Include="PagesJefe\RespuestaEvaluacion.aspx" />
+    <Content Include="Styles\apertura.css" />
+    <Content Include="Styles\asignaciones.css" />
+    <Content Include="Styles\asignarevidencia.css" />
+    <Content Include="Styles\asignarrol.css" />
+    <Content Include="Styles\bienvenida.css" />
+    <Content Include="Styles\carga.css" />
+    <Content Include="Styles\config.css" />
+    <Content Include="Styles\dashboard.css" />
+    <Content Include="Styles\definir.css" />
+    <Content Include="Styles\editarmachote.css" />
+    <Content Include="Styles\enviar.css" />
+    <Content Include="Styles\evidencias.css" />
+    <Content Include="Styles\evidenciasmachote.css" />
+    <Content Include="Styles\historial.css" />
+    <Content Include="Styles\HistorialEvalua.css" />
+    <Content Include="Styles\home.css" />
+    <Content Include="Styles\menuinicio.css" />
+    <Content Include="Styles\plantillacontenido.css" />
+    <Content Include="Styles\popup.css" />
+    <Content Include="Styles\pruebasdivs.css" />
+    <Content Include="Styles\pruebasdivs3.css" />
+    <Content Include="Styles\pruebasdivsv2.css" />
+    <Content Include="Styles\registro.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\respuestas.css" />
+    <Content Include="Styles\Revisar.css" />
+    <Content Include="Styles\sinrol.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Director.Master.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Director.Master.designer.cs">
+      <DependentUpon>Director.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Empleado.Master.cs">
+      <DependentUpon>Empleado.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleado.Master.designer.cs">
+      <DependentUpon>Empleado.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Fiscalizador.Master.cs">
+      <DependentUpon>Fiscalizador.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fiscalizador.Master.designer.cs">
+      <DependentUpon>Fiscalizador.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.Master.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.Master.designer.cs">
+      <DependentUpon>Inicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Jefe.Master.cs">
+      <DependentUpon>Jefe.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jefe.Master.designer.cs">
+      <DependentUpon>Jefe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PagesAdmin\AsignarRoles.aspx.cs">
+      <DependentUpon>AsignarRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesAdmin\AsignarRoles.aspx.designer.cs">
+      <DependentUpon>AsignarRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesAdmin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesAdmin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesAdmin\plantilla.aspx.cs">
+      <DependentUpon>plantilla.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesAdmin\plantilla.aspx.designer.cs">
+      <DependentUpon>plantilla.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesAdmin\VerUsuarios.aspx.cs">
+      <DependentUpon>VerUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesAdmin\VerUsuarios.aspx.designer.cs">
+      <DependentUpon>VerUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\AperturayCierre.aspx.cs">
+      <DependentUpon>AperturayCierre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\AperturayCierre.aspx.designer.cs">
+      <DependentUpon>AperturayCierre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\config.aspx.cs">
+      <DependentUpon>config.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\config.aspx.designer.cs">
+      <DependentUpon>config.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\DefinirEvaluacion.aspx.cs">
+      <DependentUpon>DefinirEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\DefinirEvaluacion.aspx.designer.cs">
+      <DependentUpon>DefinirEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\Formulario.aspx.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\Formulario.aspx.designer.cs">
+      <DependentUpon>Formulario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\HistorialEV.aspx.cs">
+      <DependentUpon>HistorialEV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\HistorialEV.aspx.designer.cs">
+      <DependentUpon>HistorialEV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\HistorialEvaluaciones.aspx.cs">
+      <DependentUpon>HistorialEvaluaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\HistorialEvaluaciones.aspx.designer.cs">
+      <DependentUpon>HistorialEvaluaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEmpleado\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEmpleado\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\configFisca.aspx.cs">
+      <DependentUpon>configFisca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\configFisca.aspx.designer.cs">
+      <DependentUpon>configFisca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\HistorialFiscalizador.aspx.cs">
+      <DependentUpon>HistorialFiscalizador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\HistorialFiscalizador.aspx.designer.cs">
+      <DependentUpon>HistorialFiscalizador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Observaciones.aspx.cs">
+      <DependentUpon>Observaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Observaciones.aspx.designer.cs">
+      <DependentUpon>Observaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Respuestas.aspx.cs">
+      <DependentUpon>Respuestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Respuestas.aspx.designer.cs">
+      <DependentUpon>Respuestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Revisar.aspx.cs">
+      <DependentUpon>Revisar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Revisar.aspx.designer.cs">
+      <DependentUpon>Revisar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Revisiones.aspx.cs">
+      <DependentUpon>Revisiones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Revisiones.aspx.designer.cs">
+      <DependentUpon>Revisiones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\Espera.aspx.cs">
+      <DependentUpon>Espera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\Espera.aspx.designer.cs">
+      <DependentUpon>Espera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\LandingPage.aspx.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\LandingPage.aspx.designer.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\PaginaSinRol.aspx.cs">
+      <DependentUpon>PaginaSinRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\PaginaSinRol.aspx.designer.cs">
+      <DependentUpon>PaginaSinRol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesInicio\Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesInicio\Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\AsignarEvidencia.aspx.cs">
+      <DependentUpon>AsignarEvidencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\AsignarEvidencia.aspx.designer.cs">
+      <DependentUpon>AsignarEvidencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\AsignarEvidencias.aspx.cs">
+      <DependentUpon>AsignarEvidencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\AsignarEvidencias.aspx.designer.cs">
+      <DependentUpon>AsignarEvidencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\CargaEvaluacion.aspx.cs">
+      <DependentUpon>CargaEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\CargaEvaluacion.aspx.designer.cs">
+      <DependentUpon>CargaEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\configjefe.aspx.cs">
+      <DependentUpon>configjefe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\configjefe.aspx.designer.cs">
+      <DependentUpon>configjefe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\Enviar.aspx.cs">
+      <DependentUpon>Enviar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\Enviar.aspx.designer.cs">
+      <DependentUpon>Enviar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\Evidencias.aspx.cs">
+      <DependentUpon>Evidencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\Evidencias.aspx.designer.cs">
+      <DependentUpon>Evidencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesJefe\RespuestaEvaluacion.aspx.cs">
+      <DependentUpon>RespuestaEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\RespuestaEvaluacion.aspx.designer.cs">
+      <DependentUpon>RespuestaEvaluacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Director.Master" />
+    <Content Include="Admin.Master" />
+    <Content Include="Fiscalizador.Master" />
+    <Content Include="Jefe.Master" />
+    <Content Include="Empleado.Master" />
+    <Content Include="Inicio.Master" />
+    <None Include="packages.config" />
+    <Content Include="PagesInicio\Web.sitemap" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{c87279cf-69f9-48cd-943b-7dd47a84cebe}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocios\Negocios.csproj">
+      <Project>{c80b4964-5a31-40b9-bb47-1567c4c8fd15}</Project>
+      <Name>Negocios</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64717</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:64717/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

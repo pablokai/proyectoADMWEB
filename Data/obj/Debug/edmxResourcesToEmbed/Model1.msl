@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PROYECTO_SITIOSWEBModelStoreContainer" CdmEntityContainer="ProyectoEntities">
+    <EntitySetMapping Name="AREAs">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.AREA">
+        <MappingFragment StoreEntitySet="AREA">
+          <ScalarProperty Name="IDAREA" ColumnName="IDAREA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPONENTES">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.COMPONENTE">
+        <MappingFragment StoreEntitySet="COMPONENTES">
+          <ScalarProperty Name="IDCOMPONENTE" ColumnName="IDCOMPONENTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DEPARTAMENTOS">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.DEPARTAMENTO">
+        <MappingFragment StoreEntitySet="DEPARTAMENTOS">
+          <ScalarProperty Name="IDDEPARTAMENTO" ColumnName="IDDEPARTAMENTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EJES">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.EJE">
+        <MappingFragment StoreEntitySet="EJES">
+          <ScalarProperty Name="IDEJE" ColumnName="IDEJE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVALUACIONES">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.EVALUACIONE">
+        <MappingFragment StoreEntitySet="EVALUACIONES">
+          <ScalarProperty Name="IDEVALUACION" ColumnName="IDEVALUACION" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EVIDENCIAS">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.EVIDENCIA">
+        <MappingFragment StoreEntitySet="EVIDENCIAS">
+          <ScalarProperty Name="IDREGISTRO" ColumnName="IDREGISTRO" />
+          <ScalarProperty Name="IDPERIODO" ColumnName="IDPERIODO" />
+          <ScalarProperty Name="IDPUNTO" ColumnName="IDPUNTO" />
+          <ScalarProperty Name="LINKEVIDENCIA" ColumnName="LINKEVIDENCIA" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NIVELES">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.NIVELE">
+        <MappingFragment StoreEntitySet="NIVELES">
+          <ScalarProperty Name="IDNIVELES" ColumnName="IDNIVELES" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PERIODOS">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.PERIODO">
+        <MappingFragment StoreEntitySet="PERIODOS">
+          <ScalarProperty Name="IDPERIODO" ColumnName="IDPERIODO" />
+          <ScalarProperty Name="FECHAINICIO" ColumnName="FECHAINICIO" />
+          <ScalarProperty Name="FECHAFINAL" ColumnName="FECHAFINAL" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="IDEVALUACION" ColumnName="IDEVALUACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PUNTOS_EVALUACION">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.PUNTOS_EVALUACION">
+        <MappingFragment StoreEntitySet="PUNTOS_EVALUACION">
+          <ScalarProperty Name="IDREGISTRO" ColumnName="IDREGISTRO" />
+          <ScalarProperty Name="IDEVALUACION" ColumnName="IDEVALUACION" />
+          <ScalarProperty Name="IDCOMPONENTE" ColumnName="IDCOMPONENTE" />
+          <ScalarProperty Name="IDEJE" ColumnName="IDEJE" />
+          <ScalarProperty Name="IDNIVEL" ColumnName="IDNIVEL" />
+          <ScalarProperty Name="NUMEROACTIVIDAD" ColumnName="NUMEROACTIVIDAD" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="OBLIGATORIO" ColumnName="OBLIGATORIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ROLES">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLES">
+          <ScalarProperty Name="IDROL" ColumnName="IDROL" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOLICITUD_ROL">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.SOLICITUD_ROL">
+        <MappingFragment StoreEntitySet="SOLICITUD_ROL">
+          <ScalarProperty Name="CODIGO" ColumnName="CODIGO" />
+          <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+          <ScalarProperty Name="ROL" ColumnName="ROL" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="PROYECTO_SITIOSWEBModel.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="IDUSUARIO" ColumnName="IDUSUARIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PRIMERAPELLIDO" ColumnName="PRIMERAPELLIDO" />
+          <ScalarProperty Name="SEGUNDOAPELLIDO" ColumnName="SEGUNDOAPELLIDO" />
+          <ScalarProperty Name="NOMBREUSUARIO" ColumnName="NOMBREUSUARIO" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+          <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+          <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+          <ScalarProperty Name="ROL" ColumnName="ROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

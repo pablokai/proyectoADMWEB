@@ -1,0 +1,430 @@
+﻿.fichas {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 300px;
+}
+
+
+.hero {
+    display: inline-block;
+    position: relative;
+    width: 235px;
+    min-width: 17%;
+    height: 255px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px #0d0c0f;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+    .hero:hover {
+        transform: scale(1.03);
+    }
+
+        .hero:hover .hero-logo {
+            background: #2bebc8;
+        }
+
+            .hero:hover .hero-logo i {
+                color: #151718;
+            }
+
+        .hero:hover .hero-btn .btn {
+            background-color: #2bebc8;
+            color: #0d0c0f;
+            border: 2px solid #2bebc8;
+            border-radius: 5px;
+        }
+
+
+:root {
+    --MORADO: #6846ec;
+    --VERDE: #2bebc8;
+    --NEGROCLARO: #27292d;
+    --NEGROINTERMEDIO: #1e1f23;
+    --NEGROOSCURO: #151718;
+    --NEGROPURO: #0d0c0f;
+    /*OPCIONAL*/
+    --GRIS: #6a6a6a;
+    --BLANCO: #FFF;
+    --ROJO: #e10049;
+}
+
+.hero-profile-img {
+    height: 60%;
+    filter: grayscale(40%);
+}
+
+.hero-description-bk {
+    background: #27292d;
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 75%;
+    width: 108%;
+    transform: skew(19deg, -9deg);
+}
+
+.second .hero-description-bk {
+    background-image: linear-gradient(-20deg, #bb7413, #e7d25c)
+}
+
+i {
+    color: white;
+    margin: 27px;
+}
+
+.hero-logo {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #6846e4, #6241df, #5d3bda, #5736d6, #5130d1);
+    position: absolute;
+    bottom: 30%;
+    left: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+    .hero-logo img {
+        height: 100%;
+    }
+
+.hero-description {
+    position: absolute;
+    color: #fff;
+    font-weight: 900;
+    left: 135px;
+    bottom: 26%;
+}
+
+.hero-btn {
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    bottom: 0%;
+    top: 73%;
+    display: block;
+    padding: 5px 30px;
+}
+
+.btn {
+    background-color: rgba(43, 235, 200, 0.7);
+    font-weight: 800;
+    color: #0d0c0f;
+    padding: 5px;
+    border: 2px solid #2bebc8;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 50px;
+    font-family: Poppins;
+    width: 150px;
+}
+
+
+    .btn:hover {
+        transform: scale(1.03);
+    }
+
+.hero-date {
+    position: absolute;
+    color: #fff;
+    left: 30px;
+    bottom: 10%;
+    top: 80%;
+    display: inline;
+    height: 100px;
+}
+
+
+.btn i:before {
+    width: 14px;
+    height: 14px;
+    position: fixed;
+    color: #fff;
+    background: #0077B5;
+    padding: 10px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+}
+
+
+
+@media only screen and (max-width: 1665px) {
+    .hero {
+        min-width: 8%;
+    }
+}
+
+.unoporzona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
+}
+
+.unocompleto {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    width: 100%;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.TB1 {
+    width: 99%;
+    height: 40px;
+    margin: 5px;
+    font-size: 15px;
+    font-family: Poppins;
+    background-color: #38393a;
+    border-radius: 6px;
+    border: solid 2px #38393a;
+    color: #EAEAEA;
+}
+
+    .TB1:focus {
+        border-color: #6846ec;
+        outline: none;
+    }
+
+.id {
+    background-color: #151718;
+    border: solid 2px #151718;
+    border-radius: 6px;
+    padding: 10px;
+    width: 15%;
+    text-align: center;
+}
+
+h3 {
+    display: inline;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.lblID {
+    display: inline;
+    font-weight: 700;
+    color: #2bebc8;
+    font-size: 18px;
+}
+
+.pregunta {
+    padding: 10px;
+    width: 25%;
+    margin-top: 10px;
+}
+
+    .pregunta i {
+        display: inline;
+        justify-content: left;
+        color: #FFF;
+        margin: 0;
+        padding-bottom: 5px;
+        margin-right: 8px;
+    }
+
+    .pregunta h2 {
+        line-height: 0;
+        display: inline;
+        font-size: 20px;
+        text-align: left;
+        color: #FFF;
+        font-weight: 700;
+    }
+
+
+.lblPregunta {
+    display: block;
+    font-weight: 400;
+    line-height: 60px;
+    font-size: 13px;
+}
+
+
+.evidencia {
+    display: block;
+    height: 200px;
+}
+
+.lblEvidencia {
+    display: inline;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+}
+
+.text {
+    background-color: #38393a;
+    width: 85%;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 6px;
+}
+
+
+.btnVer {
+    float: right;
+    display: inline;
+    background-color: #6846ec;
+    font-weight: 800;
+    color: #FFF;
+    padding: 5px;
+    border: 2px solid #6846ec;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 50px;
+    font-family: Poppins;
+    width: 12%;
+    bottom: 80px;
+    position: relative;
+}
+
+    .btnVer:hover {
+        background-color: #4725CD;
+    }
+
+
+
+
+.lblEstado {
+    float: right;
+    display: inline;
+    margin-right: 20px;
+}
+
+.btns {
+    display: block;
+    margin-top: 30px;
+}
+
+.btnAprobar {
+    display: inline;
+    background-color: #2bebc8;
+    font-weight: 800;
+    color: #0d0c0f;
+    padding: 5px;
+    border: 2px solid #2bebc8;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 50px;
+    font-family: Poppins;
+    width: 150px;
+    margin-right: 15px;
+}
+
+#iaprobar {
+    color: #2bebc8;
+}
+
+.btnAprobar:hover {
+    background-color: #14BE9F;
+    border: 2px solid #2bebc8;
+    transform: scale(1.02);
+}
+
+    .btnAprobar:hover #iaprobar {
+    }
+
+.btnNuevo {
+    display: inline;
+    background-color: #6846ec;
+    font-weight: 800;
+    color: #FFF;
+    padding: 5px;
+    border: 2px solid #6846ec;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 60px;
+    font-family: Poppins;
+    width: 250px;
+    margin-left: 10px;
+}
+
+#ianuevo {
+    color: #6846ec;
+}
+
+.btnNuevo:hover {
+    background-color: #14BE9F;
+    border: 2px solid #2bebc8;
+    transform: scale(1.02);
+}
+
+    .btnNuevo:hover #ianuevo {
+    }
+
+.btnRechazar {
+    display: inline;
+    background-color: #1e1f23;
+    font-weight: 800;
+    color: #2bebc8;
+    padding: 5px;
+    border: 2px solid #1e1f23;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 50px;
+    font-family: Poppins;
+    width: 150px;
+}
+
+
+#irechazar {
+    color: #e10049;
+}
+
+.btnRechazar:hover {
+    background-color: #4725CD;
+    border: 2px solid #4725CD;
+    transform: scale(1.02);
+    transform: scale(1.02);
+    color: white;
+}
+
+    .btnRechazar:hover #irechazar {
+    }
+
+.lblTitulo {
+    font-size: 18px;
+}
+
+.CB {
+    width: 40px;
+    height: 45px;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+    .CB input[type="checkbox"] {
+        width: 22px;
+        height: 22px;
+        background-color: #2bebc8;
+        margin-top: 5px;
+        border: solid 2px #2bebc8;
+        border-radius: 10px;
+    }
+
+span .CB input[type="checkbox"]:checked:after {
+    background-color: #2bebc8;
+}
+
+.titulo {
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    padding: 30px;
+    margin: 0;
+}

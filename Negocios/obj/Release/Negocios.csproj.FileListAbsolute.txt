@@ -1,0 +1,10 @@
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\bin\Release\Negocios.dll
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\bin\Release\Negocios.pdb
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\bin\Release\Data.dll
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\bin\Release\Data.pdb
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\bin\Release\Data.dll.config
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\obj\Release\Negocios.csproj.AssemblyReference.cache
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\obj\Release\Negocios.csproj.CoreCompileInputs.cache
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\obj\Release\Negocios.dll
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\obj\Release\Negocios.pdb
+C:\Users\Pablo-PC\source\repos\Proyecto-AdminWeb\Negocios\obj\Release\Negocios.csproj.CopyComplete

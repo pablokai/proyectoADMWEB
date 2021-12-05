@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Empleado.master.cs" Inherits="Proyecto_AdminWeb.Empleado" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Dashboard</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+
+      <link rel="stylesheet" href="Styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+       <input type="checkbox" id="check">
+                <!--header area start-->
+                <header>
+                    <label for="check">
+                        <i class="fas fa-bars" id="sidebar_btn"></i>
+                        <asp:Label ID="Label1" runat="server" Text="Dashboard" CssClass="title"></asp:Label>
+                    </label>
+
+                    <!--<div class="left_area">
+                        <img src="../Images/logooriginal.png">
+                    </div>-->
+                    <div class="config_area">
+                        <img src="../Images/settings.png">                     
+                    </div>
+                    <div class="user_area">
+                          <img src="../Images/profileheader.svg"><asp:Label ID="lblUsername" runat="server" Text="Usuario" CssClass="username"></asp:Label>                    
+                    </div>
+                    <div class="right_area">
+                        <asp:Button ID="Button1" class="logout_btn" runat="server" Text="Cerrar Sesión" OnClick="Button1_Click" />                       
+                    </div>
+                </header>
+                <!--header area end-->
+                <!--mobile navigation bar start-->
+                <div class="mobile_nav">
+                    <div class="nav_bar">
+                        <img src="../Images/logooriginal.png" alt="" > 
+                        <i class="fa fa-bars nav_btn"></i> 
+                    </div>
+                    <div class="mobile_nav_items">
+                     <a href="#"><i class="fas fa-desktop"></i><span>Subir evidencia</span></a>
+                    <a href="#"><i class="fas fa-cogs"></i><span>Subir avance</span></a>            
+                    </div>
+                    
+                </div>
+                <!--mobile navigation bar end-->
+                <!--sidebar start-->
+                <div class="sidebar">
+                    <div class="logo">
+                         <img src="../Images/logo.svg">
+                    </div>
+                    <hr >
+                    <div class="logoicon">
+                          <img  src="../Images/logoicon.png">
+                    </div>
+                    <div class="profile_info">
+                        <div class="profile_image">
+                        <img src="../Images/iconhead.png" class="image" alt="" >
+                       
+                        </div>
+                         <h4>Empleado</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-desktop"></i><span>Subir evidencia</span></a>
+                    <a href="#"><i class="fas fa-cogs"></i><span>Subir avance</span></a>
+                  
+                </div>
+                <!--sidebar end-->
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+
+                        $('.logoicon').hide();
+
+                        $('.nav_btn').click(function () {
+                            $('.mobile_nav_items').toggleClass('active');
+                        });
+
+                        $('#check').click(function () {
+
+                            if ( $('.logo').is(':visible')) {
+                                $('.logo').hide();
+                            }else {
+                                $('.logo').show();  
+                            }
+
+                            if ($('hr').is(':visible')) {
+                                $('hr').hide();
+                            } else {
+                                $('hr').show();
+                            }
+
+                            if ($('.logoicon').is(':visible')) {;
+                                $('.logoicon').hide();
+                            } else {
+                                $('.logoicon').show();
+                            }
+
+                            //$('logoicon').css('display', 'block');
+                            
+                        });
+                        
+                    });
+                </script>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+         <footer class="footer">         
+        <div class="icons">
+           <a href="#"><i class="fas fa-envelope"></i></a>
+           <a href="https://www.cuc.ac.cr/app/cms/www/index.php"><i class="fas fa-globe"></i></a>
+            <a href="https://www.youtube.com/channel/UCcbKGfA6OlUpA1QSu-gLzgA"><i class="fab fa-youtube"></i></a>          
+        </div>
+          <p class="company-name">
+                Copyright 2021 © Control Interno
+            </p>   
+        </footer>
+    </form>
+</body>
+</html>

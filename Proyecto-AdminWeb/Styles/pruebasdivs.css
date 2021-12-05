@@ -1,0 +1,352 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+div.c {
+    width: 1270px;
+}
+
+.contenedor {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+.contenedorA {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    position: absolute;
+    top: 500px;
+    bottom: 400px;
+
+    /**/
+    width: 70%;
+    padding-left: 200px;
+    left: 180px;
+    /**/
+}
+
+.box {
+    left: auto;
+    color: whitesmoke;
+    width: 50px;
+    height: 50px;
+    background: #27292d;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #27292d;
+}
+.btnboxx {
+    left: auto;
+    color: whitesmoke;
+    width: 70px;
+    height: 50px;
+    background: #27292d;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #27292d;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .btnboxx:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .btnboxx:hover {
+        color: white;
+        background: #6846ec;
+    }
+    .box:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .box:hover {
+        color: white;
+        background: #6846ec;
+    }
+
+.contenedor2 {
+    position: absolute;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.boxPrin {
+    color: whitesmoke;
+    width: 700px;
+    height: 400px;
+    background: #27292d;
+    margin-top: 20px;
+    margin: auto;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+
+.boxdiv {
+    left: auto;
+    color: whitesmoke;
+    width: 200px;
+    height: 250px;
+    background: #27292d;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #27292d;
+    justify-content:space-between;
+    display:inline-block;
+    position:relative;
+}
+
+    .boxdiv:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+
+.btn {
+    left: auto;
+    color: whitesmoke;
+    width: 180px;
+    height: 70px;
+    background: #27292d;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #27292d;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        background: #6846ec;
+    }
+
+    .btn:focus {
+        background: #6846ec;
+    }
+
+.boxdiv2 {
+    left: auto;
+    color: whitesmoke;
+    width: 900px;
+    height: 100px;
+    background: #27292d;
+    margin: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border-color: #27292d;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+    .boxdiv2:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    }
+
+.Imagenestt {
+    width: 80px;
+    height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.unoporzona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.unocompleto {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 96.5%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+}
+
+
+.tabla {
+    border-collapse: collapse;
+    /*margin: 25px 0;*/
+    font-size: 0.9em;
+    font-family: Poppins;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 30px;
+    border: 0px solid #151718;
+    color: white;
+    width: 100%;
+}
+
+.codigo {
+    background-color: transparent;
+    color: white;
+}
+
+.tabla thead tr {
+    background: #6846ec;
+    color: #ffffff;
+    text-align: left;
+}
+
+.tabla tbody tr th {
+    background: #6846ec;
+}
+
+.tabla th,
+.tabla td {
+    padding: 12px 15px;
+}
+
+.tabla tbody tr {
+    border-bottom: 1px solid #151718;
+}
+
+    .tabla tbody tr:nth-of-type(even) {
+        background-color: #1e1f23;
+    }
+
+    .tabla tbody tr:last-of-type {
+        border-bottom: 2px solid #2bebc8;
+    }
+
+
+@media screen and (max-width:1200px) {
+    .boxPrin {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .boxPrin {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .contenedor2 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .contenedor2 {
+        width: 90%;
+    }
+}
+
+.btnver {
+    width: 70px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px solid #151718;
+    background: #6846ec;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+    .btnver:hover {
+        background: #2bebc8;
+    }
+
+
+.alinear {
+    margin-top: -20px;
+}
+
+.tresporzona i {
+    display: inline;
+    float: right;
+    color: #6846ec;
+}
+
+.tresporzona h1 {
+    font-weight: 400;
+    font-size: 40px;
+    color: #FFF;
+}
+
+.num {
+    font-weight: 800;
+    font-size: 50px;
+    color: #FFF;
+}
+
+.tresporzona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 250px;
+}
+
+
+.zona {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 31%;
+    margin: 20px;
+    margin-right: 8px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+    height: 200px;
+}
+
+
+    .zona:hover {
+        background: #6846ec;
+        transform: scale(1.02);
+        border-color: #6846ec;
+        color: white;
+    }
+
+        .zona :hover i {
+            color: white;
+        }
+
+.indicador {
+    color: white;
+    text-align: center;
+}
+
+.tituloevaluacion {
+    line-height: 40px;
+    background-color: #151718;
+    border: 2px solid #151718;
+    border-radius: 6px;
+    color: #2bebc8;
+    width: 28%;
+    font-size: 30px;
+    padding: 10px;
+    font-weight: 600;
+}

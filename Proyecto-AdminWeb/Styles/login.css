@@ -1,0 +1,128 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --MORADO: #6846ec;
+    --VERDE: #2bebc8;
+    --NEGROCLARO: #27292d;
+    --NEGROINTERMEDIO: #1e1f23;
+    --NEGROOSCURO: #151718;
+    --NEGROPURO: #0d0c0f;
+    /*OPCIONAL*/
+    --GRIS: #6a6a6a;
+    --BLANCO: #FFF;
+    --ROJO: #e10049;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+    *:focus {
+        outline: none;
+    }
+
+body {
+    font-family: Poppins;
+    background: url(../Images/charles-forerunner-3fPXt37X6UQ-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    padding: 50px;
+    background-color: #27292d;
+   
+}
+
+
+img{
+    object-fit: contain;
+    width: 170px;
+    height: 100px;
+}
+
+.login {
+    margin: 20px auto;
+    margin-top: 100px;
+    width: 400px;
+}
+
+.login-screen {
+    background: #27292d;
+    padding: 50px;
+    border-radius: 5px
+}
+
+.app-title {
+    text-align: center;
+    color: #FFF;
+    
+}
+
+.login-form {
+    text-align: center;
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+input {
+    background-color: #38393a;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 200;
+    padding: 10px 0;
+    padding-left: 10px;
+    width: 250px;
+    transition: border .5s;
+    color: white;
+}
+
+    input:focus {
+        border: 2px solid #6846ec;
+        box-shadow: none;
+        color: white;
+    }
+
+.btn {
+    border: 2px solid transparent;
+    background: #6846ec;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 25px;
+    padding: 10px 0;
+    text-decoration: none;
+    text-shadow: none;
+    border-radius: 3px;
+    box-shadow: none;
+    transition: 0.25s;
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+
+    .btn:hover {
+        background-color: #2bebc8 !important;
+        opacity: 0.9;
+        color: #27292d;
+        border-color: #2bebc8;
+    }
+
+.login-link {
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
+}
+
+
+h1 {
+    margin-bottom: 0;
+    font-weight: 400 !important;
+}
+h4 {
+    margin-top: 0;
+    font-weight: 400 !important;
+}
