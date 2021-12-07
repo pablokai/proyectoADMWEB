@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,10 @@ namespace Proyecto_AdminWeb
 {
     public partial class Empleado : System.Web.UI.MasterPage
     {
+
+        string Login = null;
+        ConexionDB db = new ConexionDB();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,6 +25,9 @@ namespace Proyecto_AdminWeb
                 else
                 {
                     int rol = Int32.Parse(Session["Rol"].ToString());
+                    Login = Session["Login"].ToString();
+                    string nombre = db.obtenerNombre(Login);
+                    lblUsername.Text = nombre;
                     if (rol != 5)
                     {
                         Response.Redirect("../PagesInicio/Home.aspx");
@@ -33,6 +41,16 @@ namespace Proyecto_AdminWeb
         {
             Session.RemoveAll();
             Response.Redirect("../PagesInicio/Home.aspx");
+        }
+
+        protected void btnUser_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../PagesEmpleado/Empleado_ConfigB.aspx");
+        }
+
+        protected void imgbtnsetting_Click(object sender, ImageClickEventArgs e)
+        {
+
         }
     }
 }

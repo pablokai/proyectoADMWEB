@@ -1,7 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Fiscalizador.Master" MaintainScrollPositionOnPostback="true" AutoEventWireup="true" CodeBehind="HistorialFiscalizador.aspx.cs" Inherits="Proyecto_AdminWeb.PagesFiscalizador.HistorialFiscalizador" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link rel="stylesheet" href="../Styles/historial.css" />
+    <link rel="stylesheet" href="../sass/_resultados.min.css" />
+    <link rel="stylesheet" href="../sass/_resultados.css" />
+     <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -10,7 +13,7 @@
     <div class="unoporzona">
         <div class="unocompleto">
             <img src="../Images/search.png" />
-            <h1>Búsqueda avanzada de autoevaluaciones</h1>
+            <h1>Búsqueda avanzada de evaluaciones</h1>
             <h3>Elija una dependencia</h3>
             <asp:DropDownList ID="ddlDependecia" runat="server" CssClass="ddl">
             </asp:DropDownList>
@@ -158,12 +161,12 @@
                     <asp:Button ID="btnSeguimiento" runat="server" Text="Ver detalle" CssClass="btn" OnClick="btnSeguimiento_Click" />
 
                 </div>
-
+  
             </div>
 
         </div>
 
-        <asp:Panel ID="tablapanel" runat="server" Visible="false">
+        <asp:Panel ID="tablapanel" CssClass="tablapanel"  runat="server" Visible="false">
 
             <div class="unoporzona">
                 <div class="unocompleto">

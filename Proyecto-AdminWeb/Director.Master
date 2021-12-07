@@ -32,7 +32,8 @@
 
             </div>
             <div class="user_area">
-                <img src="../Images/profileheader.svg"><asp:Label ID="lblUsername" runat="server" Text="Usuario" CssClass="username"></asp:Label>
+                 <asp:ImageButton ID="btnUser" ImageUrl="~/Images/profileheader.svg" runat="server" CssClass="userimage" OnClick="btnUser_Click"/>
+                <asp:Label ID="lblUsername" runat="server" Text="Usuario" CssClass="username"></asp:Label>
             </div>
             <div class="right_area">
                 <asp:Button ID="Button1" class="logout_btn" runat="server" Text="Cerrar Sesión" OnClick="Button1_Click" />
@@ -50,6 +51,7 @@
                 <a href="../PagesDirector/DefinirEvaluacion.aspx"><i class="fas fa-calendar-plus"></i><span>Editar machote</span></a>             
                 <a href="../PagesDirector/HistorialEV.aspx"><i class="fas fa-history"></i><span>Historial de encuestas</span></a>
                 <a href="#"><i class="fas fa-tasks"></i><span>Control de avances</span></a>
+
 
             </div>
 
@@ -73,7 +75,8 @@
             <a href="../PagesDirector/AperturayCierre.aspx"><i class="fas fa-stopwatch"></i><span>Apertura y Cierre</span></a>
             <a href="../PagesDirector/DefinirEvaluacion.aspx"><i class="fas fa-calendar-plus"></i><span>Editar machote</span></a>         
             <a href="../PagesDirector/HistorialEV.aspx"><i class="fas fa-history"></i><span>Historial de encuestas</span></a>
-            <a href="#"><i class="fas fa-tasks"></i><span>Control de avances</span></a>
+            <a href="../PagesDirector/ResultadosGraficos.aspx"><i class="fas fa-chart-pie"></i><span>Vistas gráficas</span></a>            
+            <a href="../PagesDirector/VistaDeHistorico.aspx"><i class="fas fa-tasks"></i><span>Histórico de avances</span></a>
         </div>
         <!--sidebar end-->
 

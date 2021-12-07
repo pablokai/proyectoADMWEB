@@ -11,10 +11,18 @@ namespace Negocios
     {
 
 
+        String GmailBSYS = "sys.control.interno@gmail.com";
+        public string CorreoSistema()
+        {
+
+            return GmailBSYS;
+        }
+
+
         public bool enviarCorreo( string receptor,  string cuerpo)
         {
             string to = receptor; //el que recibe el correo    
-            string from = "sys.control.interno@gmail.com"; //el que envia  
+            string from = GmailBSYS; //el que envia  
             MailMessage message = new MailMessage(from, to);
 
             string titulo = "Notificación de Control Interno";

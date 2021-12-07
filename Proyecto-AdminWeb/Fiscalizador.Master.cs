@@ -56,6 +56,11 @@ namespace Proyecto_AdminWeb
 
         protected void imgbtnsetting_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("../PagesFiscalizador/Fiscalizador_ConfigB.aspx");
+        }
+
+        protected void btnUser_Click(object sender, ImageClickEventArgs e)
+        {
             Response.Redirect("../PagesFiscalizador/configFisca.aspx");
         }
     }

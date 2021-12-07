@@ -142,6 +142,7 @@
     <Content Include="Images\user.png" />
     <Content Include="Images\videocover.mp4" />
     <Content Include="Images\work.svg" />
+    <Content Include="PagesAdmin\Admin_ConfigB.aspx" />
     <Content Include="PagesAdmin\AsignarRoles.aspx" />
     <Content Include="PagesAdmin\index.aspx" />
     <Content Include="PagesAdmin\plantilla.aspx" />
@@ -149,12 +150,21 @@
     <Content Include="PagesDirector\AperturayCierre.aspx" />
     <Content Include="PagesDirector\config.aspx" />
     <Content Include="PagesDirector\DefinirEvaluacion.aspx" />
+    <Content Include="PagesDirector\Director_ConfigB.aspx" />
     <Content Include="PagesDirector\Formulario.aspx" />
     <Content Include="PagesDirector\HistorialEV.aspx" />
     <Content Include="PagesDirector\HistorialEvaluaciones.aspx" />
     <Content Include="PagesDirector\index.aspx" />
+    <Content Include="PagesDirector\ResultadosGraficos.aspx" />
+    <Content Include="PagesDirector\VistaDeHistorico.aspx" />
+    <Content Include="PagesEmpleado\Empleado_ConfigB.aspx" />
     <Content Include="PagesEmpleado\index.aspx" />
+    <Content Include="PagesEmpleado\SubirAvance.aspx" />
+    <Content Include="PagesEmpleado\SubirEvedencia.aspx" />
+    <Content Include="PagesFiscalizador\AsignarMejoras.aspx" />
     <Content Include="PagesFiscalizador\configFisca.aspx" />
+    <Content Include="PagesFiscalizador\EnviarMejora.aspx" />
+    <Content Include="PagesFiscalizador\Fiscalizador_ConfigB.aspx" />
     <Content Include="PagesFiscalizador\HistorialFiscalizador.aspx" />
     <Content Include="PagesFiscalizador\index.aspx" />
     <Content Include="PagesFiscalizador\Observaciones.aspx" />
@@ -174,20 +184,30 @@
     <Content Include="PagesJefe\Enviar.aspx" />
     <Content Include="PagesJefe\Evidencias.aspx" />
     <Content Include="PagesJefe\index.aspx" />
+    <Content Include="PagesJefe\Jefe_ConfigB.aspx" />
     <Content Include="PagesJefe\RespuestaEvaluacion.aspx" />
+    <Content Include="sass\_resultados.css">
+      <DependentUpon>_resultados.scss</DependentUpon>
+    </Content>
+    <Content Include="sass\_resultados.min.css">
+      <DependentUpon>_resultados.css</DependentUpon>
+    </Content>
     <Content Include="Styles\apertura.css" />
     <Content Include="Styles\asignaciones.css" />
     <Content Include="Styles\asignarevidencia.css" />
+    <Content Include="Styles\asignarmejora.css" />
     <Content Include="Styles\asignarrol.css" />
     <Content Include="Styles\bienvenida.css" />
     <Content Include="Styles\carga.css" />
     <Content Include="Styles\config.css" />
+    <Content Include="Styles\ConfigBin.css" />
     <Content Include="Styles\dashboard.css" />
     <Content Include="Styles\definir.css" />
     <Content Include="Styles\editarmachote.css" />
     <Content Include="Styles\enviar.css" />
     <Content Include="Styles\evidencias.css" />
     <Content Include="Styles\evidenciasmachote.css" />
+    <Content Include="Styles\graficos.css" />
     <Content Include="Styles\historial.css" />
     <Content Include="Styles\HistorialEvalua.css" />
     <Content Include="Styles\home.css" />
@@ -200,8 +220,12 @@
     <Content Include="Styles\registro.css" />
     <Content Include="Styles\login.css" />
     <Content Include="Styles\respuestas.css" />
+    <Content Include="Styles\resultados.css" />
     <Content Include="Styles\Revisar.css" />
     <Content Include="Styles\sinrol.css" />
+    <Content Include="Styles\subiravance.css" />
+    <Content Include="Styles\subirevidencia.css" />
+    <Content Include="Styles\VistaDeHistorico.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -246,6 +270,13 @@
     </Compile>
     <Compile Include="Jefe.Master.designer.cs">
       <DependentUpon>Jefe.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PagesAdmin\Admin_ConfigB.aspx.cs">
+      <DependentUpon>Admin_ConfigB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesAdmin\Admin_ConfigB.aspx.designer.cs">
+      <DependentUpon>Admin_ConfigB.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesAdmin\AsignarRoles.aspx.cs">
       <DependentUpon>AsignarRoles.aspx</DependentUpon>
@@ -296,6 +327,13 @@
     <Compile Include="PagesDirector\DefinirEvaluacion.aspx.designer.cs">
       <DependentUpon>DefinirEvaluacion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PagesDirector\Director_ConfigB.aspx.cs">
+      <DependentUpon>Director_ConfigB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\Director_ConfigB.aspx.designer.cs">
+      <DependentUpon>Director_ConfigB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesDirector\Formulario.aspx.cs">
       <DependentUpon>Formulario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,6 +362,27 @@
     <Compile Include="PagesDirector\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PagesDirector\ResultadosGraficos.aspx.cs">
+      <DependentUpon>ResultadosGraficos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\ResultadosGraficos.aspx.designer.cs">
+      <DependentUpon>ResultadosGraficos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesDirector\VistaDeHistorico.aspx.cs">
+      <DependentUpon>VistaDeHistorico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesDirector\VistaDeHistorico.aspx.designer.cs">
+      <DependentUpon>VistaDeHistorico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEmpleado\Empleado_ConfigB.aspx.cs">
+      <DependentUpon>Empleado_ConfigB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEmpleado\Empleado_ConfigB.aspx.designer.cs">
+      <DependentUpon>Empleado_ConfigB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesEmpleado\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -331,12 +390,47 @@
     <Compile Include="PagesEmpleado\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PagesEmpleado\SubirAvance.aspx.cs">
+      <DependentUpon>SubirAvance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEmpleado\SubirAvance.aspx.designer.cs">
+      <DependentUpon>SubirAvance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesEmpleado\SubirEvedencia.aspx.cs">
+      <DependentUpon>SubirEvedencia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesEmpleado\SubirEvedencia.aspx.designer.cs">
+      <DependentUpon>SubirEvedencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\AsignarMejoras.aspx.cs">
+      <DependentUpon>AsignarMejoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\AsignarMejoras.aspx.designer.cs">
+      <DependentUpon>AsignarMejoras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesFiscalizador\configFisca.aspx.cs">
       <DependentUpon>configFisca.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="PagesFiscalizador\configFisca.aspx.designer.cs">
       <DependentUpon>configFisca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\EnviarMejora.aspx.cs">
+      <DependentUpon>EnviarMejora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\EnviarMejora.aspx.designer.cs">
+      <DependentUpon>EnviarMejora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Fiscalizador_ConfigB.aspx.cs">
+      <DependentUpon>Fiscalizador_ConfigB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesFiscalizador\Fiscalizador_ConfigB.aspx.designer.cs">
+      <DependentUpon>Fiscalizador_ConfigB.aspx</DependentUpon>
     </Compile>
     <Compile Include="PagesFiscalizador\HistorialFiscalizador.aspx.cs">
       <DependentUpon>HistorialFiscalizador.aspx</DependentUpon>
@@ -471,6 +565,13 @@
     <Compile Include="PagesJefe\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PagesJefe\Jefe_ConfigB.aspx.cs">
+      <DependentUpon>Jefe_ConfigB.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PagesJefe\Jefe_ConfigB.aspx.designer.cs">
+      <DependentUpon>Jefe_ConfigB.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PagesJefe\RespuestaEvaluacion.aspx.cs">
       <DependentUpon>RespuestaEvaluacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -487,8 +588,13 @@
     <Content Include="Jefe.Master" />
     <Content Include="Empleado.Master" />
     <Content Include="Inicio.Master" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <Content Include="PagesInicio\Web.sitemap" />
+    <Content Include="sass\_resultados.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

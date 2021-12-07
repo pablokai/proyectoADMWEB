@@ -22,7 +22,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 350px;
+    height: 500px;
 }
 
 .unocompleto {

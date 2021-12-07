@@ -48,5 +48,15 @@ namespace Proyecto_AdminWeb
             Session.RemoveAll();
             Response.Redirect("../PagesInicio/Home.aspx");
         }
+
+        protected void btnUser_Click(object sender, ImageClickEventArgs e)
+        {
+           
+        }
+
+        protected void imgbtnsetting_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("../PagesAdmin/Admin_ConfigB.aspx");
+        }
     }
 }

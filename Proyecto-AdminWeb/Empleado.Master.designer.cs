@@ -42,6 +42,24 @@ namespace Proyecto_AdminWeb
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
+        /// imgbtnsetting control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgbtnsetting;
+
+        /// <summary>
+        /// btnUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btnUser;
+
+        /// <summary>
         /// lblUsername control.
         /// </summary>
         /// <remarks>

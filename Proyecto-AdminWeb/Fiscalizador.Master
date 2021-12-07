@@ -32,7 +32,8 @@
                          <asp:ImageButton ID="imgbtnsetting" runat="server" ImageUrl="~/Images/settings.png" CssClass="IconnoConfig" OnClick="imgbtnsetting_Click" />                  
                     </div>
                     <div class="user_area">
-                          <img src="../Images/profileheader.svg"><asp:Label ID="lblUsername" runat="server" Text="Usuario" CssClass="username"></asp:Label>                    
+                          <asp:ImageButton ID="btnUser" ImageUrl="~/Images/profileheader.svg" runat="server" CssClass="userimage" OnClick="btnUser_Click"/>
+                        <asp:Label ID="lblUsername" runat="server" Text="Usuario" CssClass="username"></asp:Label>                    
                     </div>
                     <div class="right_area">
                         <asp:Button ID="Button1" class="logout_btn" runat="server" Text="Cerrar Sesión" OnClick="Button1_Click2"    />                       
@@ -48,7 +49,7 @@
                     <div class="mobile_nav_items">
                          <a href="../PagesFiscalizador/Revisiones.aspx"><i class="fas fa-desktop"></i><span>Revisión evaluaciones</span></a>
                         <a href="../PagesFiscalizador/HistorialFiscalizador.aspx"><i class="fas fa-desktop"></i><span>Resultados evaluaciones</span></a>   
-                        <a href="#"><i class="fas fa-desktop"></i><span>Revisión avances</span></a>
+                         <a href="../PagesFiscalizador/AsignarMejoras.aspx"><i class="fas fa-highlighter"></i><span>Asignación de mejoras</span></a>
                                   
                     </div>
                     
@@ -73,6 +74,7 @@
                           <a href="../PagesFiscalizador/Revisiones.aspx"><i class="fas fa-file-signature"></i><span>Revisión evaluaciones</span></a>
                        
                         <a href="../PagesFiscalizador/HistorialFiscalizador.aspx"><i class="fas fa-paste"></i><span>Resultados evaluaciones</span></a>
+                    <a href="../PagesFiscalizador/AsignarMejoras.aspx"><i class="fas fa-highlighter"></i><span>Asignación de mejoras</span></a>
                      <a href="#"><i class="fas fa-desktop"></i><span>Revisión avances</span></a>
                   
                 </div>

@@ -93,8 +93,17 @@ namespace Proyecto_AdminWeb.PagesAdmin
 
                 db.actualizarEstadoSolicitud(Int32.Parse(codigo));
 
-                
-                ev.enviarCorreo(db.obtenerCorreoPersona(id), "Se le ha asignado el rol " + db.rolNombre(rol) );
+
+                //Aca elif 
+                if (Session["MSJAceptacion"] == null)
+                {
+                    ev.enviarCorreo(db.obtenerCorreoPersona(id), "Se le ha asignado el rol " + db.rolNombre(rol));
+                }
+                else
+                {
+                    string MSJAceptacion = Session["MSJAceptacion"].ToString();
+                    ev.enviarCorreo(db.obtenerCorreoPersona(id), MSJAceptacion + db.rolNombre(rol));
+                }
 
             }
             else if(e.CommandName == "btnRechazar")
@@ -111,7 +120,15 @@ namespace Proyecto_AdminWeb.PagesAdmin
 
                 db.actualizarEstadoSolicitud(Int32.Parse(codigo));
 
-                ev.enviarCorreo(db.obtenerCorreoPersona(id), "Se le ha denegado su solicitud de rol " + db.rolNombre(rol));
+                if (Session["MSJRechazo"] == null)
+                {
+                    ev.enviarCorreo(db.obtenerCorreoPersona(id), "Se le ha denegado su solicitud de rol" + db.rolNombre(rol));
+                }
+                else
+                {
+                    string MSJAceptacion = Session["MSJRechazo"].ToString();
+                    ev.enviarCorreo(db.obtenerCorreoPersona(id), MSJAceptacion + db.rolNombre(rol));
+                }
 
             }
 

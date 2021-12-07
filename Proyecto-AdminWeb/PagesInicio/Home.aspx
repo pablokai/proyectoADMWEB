@@ -5,7 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Inicio</title>
-    <link rel="stylesheet" href="../Styles/home.css">
+    <link rel="stylesheet" href="../Styles/home.css"/>
+      <meta name="viewport" content="width=device-width"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     <script src="https://kit.fontawesome.com/7adeb3fe3b.js" crossorigin="anonymous"></script>
 </head>
 <body >

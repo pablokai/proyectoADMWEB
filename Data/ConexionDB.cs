@@ -762,7 +762,7 @@ namespace Data
             {
                 abrirConexion();
 
-                query = " SELECT e.ID_EVALUACION_EVIDENCIA AS ID, p.DESCRIPCION AS PREGUNTA, CASE WHEN e.DESCRIPCION IS NULL THEN 'Sin respuesta' ELSE e.DESCRIPCION  END AS RESPUESTA , p.OBLIGATORIO AS ESTADO FROM EVALUACIONES_EVIDENCIAS e INNER JOIN EVALUACIONES_PUNTOS p ON p.ID_EVALUACION_PUNTO = e.ID_EVALUACION_PUNTO WHERE e.ESTADO_RESPUESTA = 1 AND e.ESTADO_REVISION = 0 AND e.ID_EVALUACIONES_RESPUESTAS = '" + idevaluacion + "' AND e.IDEJE = '" + eje + "' AND e.IDCOMPONENTE = '" + componente + "' AND e.IDNIVEL = '" + nivel + "'; ";
+                query = "SELECT e.ID_EVALUACION_EVIDENCIA AS ID, p.DESCRIPCION AS PREGUNTA, CASE WHEN e.DESCRIPCION IS NULL THEN 'Sin respuesta' ELSE e.DESCRIPCION  END AS RESPUESTA , p.OBLIGATORIO AS ESTADO FROM EVALUACIONES_EVIDENCIAS e INNER JOIN EVALUACIONES_PUNTOS p ON p.ID_EVALUACION_PUNTO = e.ID_EVALUACION_PUNTO WHERE e.ESTADO_RESPUESTA = 1 AND e.ESTADO_REVISION = 0 AND e.ID_EVALUACIONES_RESPUESTAS = '" + idevaluacion + "' AND e.IDEJE = '" + eje + "' AND e.IDCOMPONENTE = '" + componente + "' AND e.IDNIVEL = '" + nivel + "'; ";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, cnn);
 
@@ -2125,74 +2125,6 @@ namespace Data
             return tabla;
         }
 
-        public bool actualizarPreguntas(string descripcion, int id)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                abrirConexion();
-                query = "EXEC sp_actualiza_pregunta @DESCRIPCION,@ID";
-
-
-                SqlCommand db = new SqlCommand(query, cnn);
-
-                db.Parameters.AddWithValue("@DESCRIPCION", descripcion);
-                db.Parameters.AddWithValue("@ID", id);
-
-                db.ExecuteNonQuery();
-
-                cnn.Close();
-
-            }
-            catch (Exception)
-            {
-                cerrarConexion();
-                return false;
-                throw;
-
-            }
-            finally
-            {
-                cerrarConexion();
-            }
-
-            return true;
-        }
-
-        public bool registrarEvaluacion(int opcion, string descripcion)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                abrirConexion();
-                query = "exec sp_nueva_evaluacion @OPCION,@ODESCRIPCION";
-
-
-                SqlCommand db = new SqlCommand(query, cnn);
-
-                db.Parameters.AddWithValue("@OPCION", opcion);
-                db.Parameters.AddWithValue("@ODESCRIPCION", descripcion);
-
-                db.ExecuteNonQuery();
-
-                cnn.Close();
-
-            }
-            catch (Exception)
-            {
-                cerrarConexion();
-                return false;
-                throw;
-
-            }
-            finally
-            {
-                cerrarConexion();
-            }
-
-            return true;
-        }
-
         public DataTable obtenerPreguntasAsignar(string evaluacion, int comp, int eje, int nivel)
         {
 
@@ -2347,8 +2279,41 @@ namespace Data
 
         }
 
-        #region Modulo_Control_Avance
-        public DataTable obtenerControlSeguimiento(int id)
+        public bool registrarEvaluacion(int opcion, string descripcion)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "exec sp_nueva_evaluacion @OPCION,@ODESCRIPCION";
+
+
+                SqlCommand db = new SqlCommand(query, cnn);
+
+                db.Parameters.AddWithValue("@OPCION", opcion);
+                db.Parameters.AddWithValue("@ODESCRIPCION", descripcion);
+
+                db.ExecuteNonQuery();
+
+                cnn.Close();
+
+            }
+            catch (Exception)
+            {
+                cerrarConexion();
+                return false;
+                throw;
+
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+            return true;
+        }
+
+        public DataTable obtenerDepPorArea()
         {
 
             DataTable tabla = new DataTable();
@@ -2357,7 +2322,7 @@ namespace Data
 
                 abrirConexion();
 
-                query = "exec sp_control_seguimiento " + id + " ;";
+                query = "SELECT CONCAT(IDDEPARTAMENTO , '-' , DESCRIPCION) AS DEPARTAMENTO FROM DEPARTAMENTOS";
 
                 SqlDataAdapter da = new SqlDataAdapter(query, cnn);
 
@@ -2369,7 +2334,7 @@ namespace Data
             catch (Exception ex)
             {
                 cerrarConexion();
-                throw new Exception("Error al mostrar datos, detalles: " + ex.Message);
+                throw new Exception("No se pudo agregar los datos, detalles: " + ex.Message);
             }
             finally
             {
@@ -2379,18 +2344,54 @@ namespace Data
             return tabla;
         }
 
-        public void actualizaEstado(int id)
+
+        public DataTable obtenerPreguntasMejora(string evaluacion, int comp, int eje, int nivel)
+        {
+
+            DataTable tabla = new DataTable();
+            try
+            {
+
+                abrirConexion();
+
+                query = "SELECT v.ID_EVALUACION_EVIDENCIA, e.DESCRIPCION, CASE WHEN v.DESCRIPCION  IS NULL THEN 'Sin responder' ELSE v.DESCRIPCION END AS EVIDENCIA, CASE WHEN v.ESTADO_REVISION = 2 THEN 'Incorrecta' ELSE 'Correcta' END AS ESTADO FROM EVALUACIONES_EVIDENCIAS v, EVALUACIONES_PUNTOS e WHERE v.ID_EVALUACIONES_RESPUESTAS ="+evaluacion+" AND v.IDCOMPONENTE = "+comp+" AND v.IDEJE = "+eje+" AND v.IDNIVEL = "+nivel+" AND v.ID_EVALUACION_PUNTO = e.ID_EVALUACION_PUNTO ";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+
+                da.Fill(tabla);
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                cerrarConexion();
+                throw new Exception("No se pudo agregar los datos, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+            return tabla;
+        }
+
+
+        public void asignarNuevaMejora(int idpregunta, string encargado, string fecha)
         {
             try
             {
 
                 abrirConexion();
 
-                query = "exec sp_actualiza_estado @ID;";
+                query = "INSERT INTO AVANCES_MEJORAS values(@EVIDENCIA, @ENCARGADO, @ESTADO, @FECHA);";
 
                 SqlCommand db = new SqlCommand(query, cnn);
 
-                db.Parameters.AddWithValue("@ID", id);
+                db.Parameters.AddWithValue("@EVIDENCIA", idpregunta);
+                db.Parameters.AddWithValue("@ENCARGADO", encargado);
+                db.Parameters.AddWithValue("@ESTADO", 0);
+                db.Parameters.AddWithValue("@FECHA", fecha);
 
                 db.ExecuteNonQuery();
 
@@ -2407,6 +2408,294 @@ namespace Data
                 cerrarConexion();
             }
         }
+
+
+        public DataTable SubirEvidencia7x(string ID_ENCARGADO)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                abrirConexion();
+
+                query = "select ep.ID_EVALUACION_PUNTO,ae.ID_EVALUACION_EVIDENCIA,ep.DESCRIPCION as Pregunta from EVALUACIONES_PUNTOS ep,ASIGNACIONES_EVIDENCIAS ae,EVALUACIONES_EVIDENCIAS ee where ae.ID_ENCARGADO = '" + ID_ENCARGADO + "' and ae.ID_EVALUACION_EVIDENCIA = ee.ID_EVALUACION_EVIDENCIA and ee.ID_EVALUACION_PUNTO = ep.ID_EVALUACION_PUNTO and ae.ESTADO = '0'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+
+                da.Fill(dt);
+                cnn.Close();
+
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+
+        public DataTable SubirxEvidencia7x(string DESCRIPCION, int ID_EVALUACION_PUNTO, int ID_EVALUACION_EVIDENCIA)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "UPDATE EVALUACIONES_EVIDENCIAS SET DESCRIPCION = '" + DESCRIPCION + "'  WHERE ID_EVALUACION_PUNTO = '" + ID_EVALUACION_PUNTO + "'and ID_EVALUACION_EVIDENCIA = '" + ID_EVALUACION_EVIDENCIA + "'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+        public DataTable ModEstadox7x(int ID_EVALUACION_EVIDENCIA)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                //UPDATE ASIGNACIONES_EVIDENCIAS  SET ESTADO = '1' WHERE ID_EVALUACION_EVIDENCIA = '"+ID_EVALUACION_EVIDENCIA+"'
+                abrirConexion();
+                query = "UPDATE ASIGNACIONES_EVIDENCIAS  SET ESTADO = '1' WHERE ID_EVALUACION_EVIDENCIA = '" + ID_EVALUACION_EVIDENCIA + "'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+
+        public DataTable obtenerMejorasEmpleado(string id)
+        {
+
+            DataTable tabla = new DataTable();
+            try
+            {
+
+                abrirConexion();
+
+                query = "select A.ID_MEJORA, a.ID_EVALUACION_EVIDENCIA, ep.DESCRIPCION as PREGUNTA, a.FECHA_MEJORA from EVALUACIONES_PUNTOS ep,AVANCES_MEJORAS a, EVALUACIONES_EVIDENCIAS ee where a.ID_ENCARGADO = '"+id+"'and a.ID_EVALUACION_EVIDENCIA = ee.ID_EVALUACION_EVIDENCIA and ee.ID_EVALUACION_PUNTO = ep.ID_EVALUACION_PUNTO and a.ESTADO = 0";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+
+                da.Fill(tabla);
+
+                cnn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                cerrarConexion();
+                throw new Exception("No se pudo agregar los datos, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+            return tabla;
+        }
+
+        public DataTable subirAvanceMejora(string descripcion, int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "UPDATE EVALUACIONES_EVIDENCIAS SET DESCRIPCION = '" + descripcion + "' WHERE ID_EVALUACION_EVIDENCIA = " + id + ";";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+        public DataTable cambiarEstadoMejora(int idmejora)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                
+                abrirConexion();
+                query = "UPDATE AVANCES_MEJORAS SET ESTADO = 1 WHERE ID_MEJORA = '" + idmejora + "';";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+
+
+        public DataTable VerCorreoUSR7x(string IDUSUARIO)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "select CORREO from USUARIO where IDUSUARIO = '" + IDUSUARIO + "'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+        public DataTable ModCorreo7x(string IDUSUARIO, string Correo)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                //UPDATE ASIGNACIONES_EVIDENCIAS  SET ESTADO = '1' WHERE ID_EVALUACION_EVIDENCIA = '"+ID_EVALUACION_EVIDENCIA+"'
+                abrirConexion();
+                query = "UPDATE USUARIO SET CORREO = '" + Correo + "' WHERE IDUSUARIO = '" + IDUSUARIO + "'";
+
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(dt);
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+            return dt;
+        }
+
+        #region Modulo_Control_Avance
+        public DataTable obtenerTablaControlSeguimiento(int id)
+        {
+
+
+
+            DataTable tabla = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "exec sp_control_seguimiento " + id + " ;";
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(tabla);
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                cerrarConexion();
+                throw new Exception("Error al mostrar datos, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+
+
+            return tabla;
+        }
+        //sp_control_seguimiento2
+        public DataTable obtenerTablaControlSeguimiento2(int id, int ID_EVALUACION_EVIDENCIA)
+        {
+
+
+
+            DataTable tabla = new DataTable();
+            try
+            {
+                abrirConexion();
+                query = "exec sp_control_seguimiento2 " + id + "," + ID_EVALUACION_EVIDENCIA + " ;";
+                SqlDataAdapter da = new SqlDataAdapter(query, cnn);
+                da.Fill(tabla);
+                cnn.Close();
+            }
+            catch (Exception ex)
+            {
+                cerrarConexion();
+                throw new Exception("Error al mostrar datos, detalles: " + ex.Message);
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+
+
+
+            return tabla;
+        }
+
+
+        public void actualizaEstadoControlSeguimiento(int id)
+        {
+            try
+            {
+             abrirConexion();
+                query = "exec sp_actualiza_estado @ID;";
+
+                SqlCommand db = new SqlCommand(query, cnn);
+
+                db.Parameters.AddWithValue("@ID", id);
+                db.ExecuteNonQuery();
+                cnn.Close();
+            }
+            catch (Exception)
+            {
+                cerrarConexion();
+            }
+            finally
+            {
+                cerrarConexion();
+            }
+        }
         #endregion
+
+
     }
 }

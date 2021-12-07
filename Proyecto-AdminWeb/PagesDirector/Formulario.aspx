@@ -98,7 +98,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 1-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel1" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo1" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -119,7 +119,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 2-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel2" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo2" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -141,7 +141,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 3-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel3" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo3" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -165,7 +165,7 @@
         </asp:Panel>
 
 
-        <!--PANEL PREGUNTA 4-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel4" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo4" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -188,7 +188,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 5-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel5" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo5" runat="server" Text="Obligatoria" CssClass="lblTitulo"></asp:Label>
@@ -211,7 +211,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 6-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel6" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo6" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -232,7 +232,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 7-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel7" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo7" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -254,7 +254,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 8-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel8" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo8" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -276,7 +276,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 9-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel9" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo9" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>
@@ -299,7 +299,7 @@
             </div>
         </asp:Panel>
 
-        <!--PANEL PREGUNTA 10-->
+        <!--PANEL PREGUNTA-->
         <asp:Panel ID="Panel10" runat="server" CssClass="unocompleto" Visible ="false">
             <div>
                 <asp:Label ID="lblTitulo10" runat="server" Text="Obligatorio" CssClass="lblTitulo"></asp:Label>

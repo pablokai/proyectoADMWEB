@@ -20,28 +20,6 @@ namespace Proyecto_AdminWeb.PagesDirector
         string cantidads;
         int cantidad;
 
-        static string id1;
-        static string id2;
-        static string id3;
-        static string id4;
-        static string id5;
-        static string id6;
-        static string id7;
-        static string id8;
-        static string id9;
-        static string id10;
-
-        static int iid1;
-        static int iid2;
-        static int iid3;
-        static int iid4;
-        static int iid5;
-        static int iid6;
-        static int iid7;
-        static int iid8;
-        static int iid9;
-        static int iid10;
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -83,31 +61,8 @@ namespace Proyecto_AdminWeb.PagesDirector
             }
         }
 
-        #region NIVELES
         public void btnIncipiente_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-
-            Panel1.Visible = false;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-            Panel8.Visible = false;
-            Panel9.Visible = false;
-            Panel10.Visible = false;
-
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
@@ -197,149 +152,6 @@ namespace Proyecto_AdminWeb.PagesDirector
             cantidads = db.obtenerCantidadPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["CANTIDAD"].ToString();
             cantidad = Int32.Parse(cantidads);
 
-            #region ID
-            if (cantidad == 1)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-            }
-            else if (cantidad == 2)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-            }
-            else if (cantidad == 3)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-            }
-            else if (cantidad == 4)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-            }
-            else if (cantidad == 5)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-            }
-            else if (cantidad == 6)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-            }
-            else if (cantidad == 7)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-            }
-            else if (cantidad == 8)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-            }
-            else if (cantidad == 9)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-            }
-            else if (cantidad == 10)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-                id10 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[9]["ID"].ToString();
-                iid10 = Int32.Parse(id10);
-            }
-            #endregion
-
             #region Paneles
             if (cantidad == 0)
             {
@@ -357,7 +169,7 @@ namespace Proyecto_AdminWeb.PagesDirector
                     CheckBox1.Checked = true;
                 }
             }
-            else if (cantidad == 2)
+            else if(cantidad == 2)
             {
                 Panel1.Visible = true;
                 Panel2.Visible = true;
@@ -710,28 +522,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
         public void btnNovato_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-
-            Panel1.Visible = false;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-            Panel8.Visible = false;
-            Panel9.Visible = false;
-            Panel10.Visible = false;
-
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
@@ -821,149 +611,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
             cantidads = db.obtenerCantidadPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["CANTIDAD"].ToString();
             cantidad = Int32.Parse(cantidads);
-
-            #region ID
-            if (cantidad == 1)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-            }
-            else if (cantidad == 2)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-            }
-            else if (cantidad == 3)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-            }
-            else if (cantidad == 4)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-            }
-            else if (cantidad == 5)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-            }
-            else if (cantidad == 6)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-            }
-            else if (cantidad == 7)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-            }
-            else if (cantidad == 8)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-            }
-            else if (cantidad == 9)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-            }
-            else if (cantidad == 10)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-                id10 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[9]["ID"].ToString();
-                iid10 = Int32.Parse(id10);
-            }
-            #endregion
 
             #region Paneles
             if (cantidad == 0)
@@ -1335,28 +982,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
         public void btnCompetente_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-
-            Panel1.Visible = false;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-            Panel8.Visible = false;
-            Panel9.Visible = false;
-            Panel10.Visible = false;
-
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
@@ -1446,149 +1071,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
             cantidads = db.obtenerCantidadPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["CANTIDAD"].ToString();
             cantidad = Int32.Parse(cantidads);
-
-            #region ID
-            if (cantidad == 1)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-            }
-            else if (cantidad == 2)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-            }
-            else if (cantidad == 3)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-            }
-            else if (cantidad == 4)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-            }
-            else if (cantidad == 5)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-            }
-            else if (cantidad == 6)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-            }
-            else if (cantidad == 7)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-            }
-            else if (cantidad == 8)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-            }
-            else if (cantidad == 9)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-            }
-            else if (cantidad == 10)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-                id10 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[9]["ID"].ToString();
-                iid10 = Int32.Parse(id10);
-            }
-            #endregion
 
             #region Paneles
             if (cantidad == 0)
@@ -1960,28 +1442,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
         public void btnDiestro_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-
-            Panel1.Visible = false;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-            Panel8.Visible = false;
-            Panel9.Visible = false;
-            Panel10.Visible = false;
-
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
@@ -2071,149 +1531,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
             cantidads = db.obtenerCantidadPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["CANTIDAD"].ToString();
             cantidad = Int32.Parse(cantidads);
-
-            #region ID
-            if (cantidad == 1)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-            }
-            else if (cantidad == 2)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-            }
-            else if (cantidad == 3)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-            }
-            else if (cantidad == 4)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-            }
-            else if (cantidad == 5)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-            }
-            else if (cantidad == 6)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-            }
-            else if (cantidad == 7)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-            }
-            else if (cantidad == 8)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-            }
-            else if (cantidad == 9)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-            }
-            else if (cantidad == 10)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-                id10 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[9]["ID"].ToString();
-                iid10 = Int32.Parse(id10);
-            }
-            #endregion
 
             #region Paneles
             if (cantidad == 0)
@@ -2585,28 +1902,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
         public void btnExperto_Click(object sender, EventArgs e)
         {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
-            TextBox10.Text = "";
-
-            Panel1.Visible = false;
-            Panel2.Visible = false;
-            Panel3.Visible = false;
-            Panel4.Visible = false;
-            Panel5.Visible = false;
-            Panel6.Visible = false;
-            Panel7.Visible = false;
-            Panel8.Visible = false;
-            Panel9.Visible = false;
-            Panel10.Visible = false;
-
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
@@ -2696,149 +1991,6 @@ namespace Proyecto_AdminWeb.PagesDirector
 
             cantidads = db.obtenerCantidadPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["CANTIDAD"].ToString();
             cantidad = Int32.Parse(cantidads);
-
-            #region ID
-            if (cantidad == 1)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-            }
-            else if (cantidad == 2)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-            }
-            else if (cantidad == 3)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-            }
-            else if (cantidad == 4)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-            }
-            else if (cantidad == 5)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-            }
-            else if (cantidad == 6)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-            }
-            else if (cantidad == 7)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-            }
-            else if (cantidad == 8)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-            }
-            else if (cantidad == 9)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-            }
-            else if (cantidad == 10)
-            {
-                id1 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[0]["ID"].ToString();
-                iid1 = Int32.Parse(id1);
-                id2 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[1]["ID"].ToString();
-                iid2 = Int32.Parse(id2);
-                id3 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[2]["ID"].ToString();
-                iid3 = Int32.Parse(id3);
-                id4 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[3]["ID"].ToString();
-                iid4 = Int32.Parse(id4);
-                id5 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[4]["ID"].ToString();
-                iid5 = Int32.Parse(id5);
-                id6 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[5]["ID"].ToString();
-                iid6 = Int32.Parse(id6);
-                id7 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[6]["ID"].ToString();
-                iid7 = Int32.Parse(id7);
-                id8 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[7]["ID"].ToString();
-                iid8 = Int32.Parse(id8);
-                id9 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[8]["ID"].ToString();
-                iid9 = Int32.Parse(id9);
-                id10 = db.obtenerPreguntas(evaluacion, Int32.Parse(componente), Int32.Parse(eje), nivel).Rows[9]["ID"].ToString();
-                iid10 = Int32.Parse(id10);
-            }
-            #endregion
 
             #region Paneles
             if (cantidad == 0)
@@ -3207,10 +2359,26 @@ namespace Proyecto_AdminWeb.PagesDirector
             }
             #endregion
         }
-        #endregion
 
-        #region ACEPTAR
         protected void Aprobar1(object sender, EventArgs e)
+        {
+            evaluacion = Request.QueryString["valor1"];
+            componente = Request.QueryString["valor2"];
+            eje = Request.QueryString["valor3"];
+
+            if (CheckBox1.Checked)
+            {
+                obligatorio = 1;
+                db.registrarPreguntas(TextBox1.Text,obligatorio,evaluacion,nivel, Int32.Parse(eje), Int32.Parse(componente));
+            }
+            else
+            {
+                obligatorio = 0;
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+            }
+
+        }
+        protected void Aprobar2(object sender, EventArgs e)
         {
             evaluacion = Request.QueryString["valor1"];
             componente = Request.QueryString["valor2"];
@@ -3226,24 +2394,6 @@ namespace Proyecto_AdminWeb.PagesDirector
                 obligatorio = 0;
                 db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
-
-        }
-        protected void Aprobar2(object sender, EventArgs e)
-        {
-            evaluacion = Request.QueryString["valor1"];
-            componente = Request.QueryString["valor2"];
-            eje = Request.QueryString["valor3"];
-
-            if (CheckBox2.Checked)
-            {
-                obligatorio = 1;
-                db.registrarPreguntas(TextBox2.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
-            }
-            else
-            {
-                obligatorio = 0;
-                db.registrarPreguntas(TextBox2.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
-            }
         }
         protected void Aprobar3(object sender, EventArgs e)
         {
@@ -3251,15 +2401,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox3.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox3.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox3.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar4(object sender, EventArgs e)
@@ -3268,15 +2418,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox4.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox4.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox4.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar5(object sender, EventArgs e)
@@ -3285,15 +2435,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox5.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox5.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox5.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar6(object sender, EventArgs e)
@@ -3302,15 +2452,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox6.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox6.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox6.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar7(object sender, EventArgs e)
@@ -3319,15 +2469,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox7.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox7.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox7.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar8(object sender, EventArgs e)
@@ -3336,15 +2486,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox8.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox8.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox8.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar9(object sender, EventArgs e)
@@ -3353,15 +2503,15 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox9.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox9.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox9.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
         protected void Aprobar10(object sender, EventArgs e)
@@ -3370,61 +2520,58 @@ namespace Proyecto_AdminWeb.PagesDirector
             componente = Request.QueryString["valor2"];
             eje = Request.QueryString["valor3"];
 
-            if (CheckBox10.Checked)
+            if (CheckBox1.Checked)
             {
                 obligatorio = 1;
-                db.registrarPreguntas(TextBox10.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
             else
             {
                 obligatorio = 0;
-                db.registrarPreguntas(TextBox10.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
+                db.registrarPreguntas(TextBox1.Text, obligatorio, evaluacion, nivel, Int32.Parse(eje), Int32.Parse(componente));
             }
         }
-        #endregion
 
-        #region MODIFICAR
         protected void Modificar1(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox1.Text, iid1);
+
         }
         protected void Modificar2(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox2.Text, iid2);
+
         }
         protected void Modificar3(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox3.Text, iid3);
+
         }
         protected void Modificar4(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox4.Text, iid4);
+
         }
         protected void Modificar5(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox5.Text, iid5);
+
         }
         protected void Modificar6(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox6.Text, iid6);
+
         }
         protected void Modificar7(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox7.Text, iid7);
+
         }
         protected void Modificar8(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox8.Text, iid8);
+
         }
         protected void Modificar9(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox9.Text, iid9);
+
         }
         protected void Modificar10(object sender, EventArgs e)
         {
-            db.actualizarPreguntas(TextBox10.Text, iid10);
+
         }
-        #endregion
 
     }
 }

@@ -1,0 +1,466 @@
+﻿
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --MORADO: #6846ec;
+    --VERDE: #2bebc8;
+    --NEGROCLARO: #27292d;
+    --NEGROINTERMEDIO: #1e1f23;
+    --NEGROOSCURO: #151718;
+    --NEGROPURO: #0d0c0f;
+    /*OPCIONAL*/
+    --GRIS: #6a6a6a;
+    --BLANCO: #FFF;
+    --ROJO: #e10049;
+}
+
+
+*{
+    font-family: Poppins, sans-serif;
+}
+
+.dosporzona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.derecha {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+}
+
+.izquierda {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+}
+
+.dosporzona3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.derecha3 {
+    background: #6846ec;
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #6846ec;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.izquierda3 {
+    background: #6846ec;
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #6846ec;
+    border-radius: 5px;
+}
+
+
+.dosporzona3 text {
+    font-size: 12px;
+    font-weight: 400;
+    fill: white ;
+}
+
+.dosporzona3 .izquierda3:hover {
+    background-color: #0d0c0f;
+    border-color: #0d0c0f;
+}
+
+    .dosporzona3 .izquierda3:hover rect {
+        fill: #0d0c0f;
+    }
+
+    .dosporzona3 .izquierda3:hover g rect {
+        fill: #2bebc8;
+    }
+
+.dosporzona3 .izquierda3:hover {
+    color: #151718;
+}
+
+    .dosporzona3 .izquierda3:hover h2 {
+        color: #2bebc8;
+    }
+
+    .dosporzona3 .izquierda3:hover i {
+        color: #2bebc8;
+    }
+
+
+.dosporzona3 .derecha3:hover {
+    background-color: #0d0c0f;
+    border-color: #0d0c0f;
+}
+
+    .dosporzona3 .derecha3:hover rect {
+        fill: #0d0c0f;
+    }
+
+    .dosporzona3 .derecha3:hover g rect {
+        fill: #2bebc8;
+    }
+
+.dosporzona3 .derecha3:hover {
+    color: #151718;
+}
+
+    .dosporzona3 .derecha3:hover h2 {
+        color: #2bebc8;
+    }
+    .dosporzona3 .derecha3:hover i {
+        color: #2bebc8;
+    }
+
+
+
+
+.dosporzona3 h2 {
+    padding: 35px 0 30px 10px;
+    font-size: 25px;
+    color: #FFF;
+    display: inline;
+}
+
+.dosporzona3 i {
+    display: inline;
+    float: right;
+    color: #FFF
+}
+
+
+
+#columnchart_values {
+    position: relative;
+    height: 400px;
+    width: 100vw;
+    top: 20px;
+    left: 0px;
+    border-radius: 12px;
+    /*transform: skew(15deg, 0deg);*/
+}
+
+#columnchart_values2 {
+    position: relative;
+    height: 400px;
+    top: 20px;
+    left: 0px;
+    border-radius: 12px;
+}
+
+#top_x_div {
+    height: 350px;
+    width: 35vw;
+    box-sizing: content-box;
+    margin-top: 20px;
+}
+
+#top_x_div2 {
+    position:inherit;
+    height: 350px;
+    width: 35vw;
+    box-sizing: content-box;
+    margin-top: 20px;
+}
+
+
+.dosporzona2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.derecha2 {
+    background: #151718;
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #151718;
+    border-radius: 5px;
+}
+
+.izquierda2 {
+    background: #151718;
+    color: #FFF;
+    padding: 20px;
+    width: 47%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #151718;
+    border-radius: 5px;
+}
+
+.dosporzona2 h1 {
+    font-size: 28px;
+    color: #2bebc8;
+    background-color: #151718;
+    padding: 10px;
+    border-radius: 5px;
+    width: 54%;
+    text-align: left;
+    display: inline;
+}
+
+
+#donut_single {
+    height: 300px;
+    width: 300px;
+    float: right;
+    display: inline;
+    border-radius: 12px;
+    border: solid 6px #151718;
+}
+
+#donut_single2 {
+    height: 300px;
+    width: 300px;
+    float: right;
+    display: inline;
+}
+
+.dosporzona2 rect {
+    fill: #151718;
+}
+
+.dosporzona2 h2 {
+    padding: 35px 0 30px 10px ;
+    font-size: 25px;
+    color: #FFF;
+}
+
+.lblNivelIndice {
+    font-weight: 400;
+    font-size: 25px;
+    background-color: #1e1f23;
+    border: solid 2px #1e1f23;
+    border-radius: 7px 0 0 7px;
+    padding: 11.5px;
+    margin-right: -5px;
+    margin-left: 100px;
+}
+
+.lblResultadoIndice {
+    font-weight: 800;
+    font-size: 30px;
+    background-color: #6846ec;
+    border: solid 2px #6846ec;
+    border-radius: 0 7px 7px 0;
+    padding: 6px;
+    padding-bottom: 8px;
+    margin-top: 20px;
+}
+
+.dosporzona h2 {
+    padding: 35px 0 30px 10px;
+    font-size: 25px;
+    color: #2bebc8;
+    display: inline;   
+}
+
+.dosporzona i {
+    display: inline;
+    float: right;
+    color: #2bebc8
+
+}
+
+
+.dosporzona text {
+    fill: #c6c6c6;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+
+.ddl {
+    border-radius: 5px;
+    font-family: Poppins;
+    padding: 5px;
+    font-weight: bold;
+    border: solid 2px #2bebc8;
+    background-color: #2bebc8;
+    color: #151718;
+    width: 40%;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 0px;
+    font-size: 15px;
+}
+
+    .ddl:hover {
+        background-color: #6846ec;
+        border: 2px solid #6846ec;
+        color: white;
+    }
+
+.btnFiltrar {
+    display: inline-block;
+    background-color: #2bebc8;
+    font-weight: 800;
+    color: #151718;
+    padding: 10px;
+    border: 2px solid #2bebc8;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 5px;
+    margin-bottom: 12px;
+    height: 50px;
+    font-family: Poppins;
+}
+
+    .btnFiltrar:hover {
+        background-color: #6846ec;
+        color: #fff;
+        border: 2px solid #6846ec;
+        border-radius: 5px;
+    }
+
+.ddl2 {
+    border-radius: 5px;
+    font-family: Poppins;
+    padding: 5px;
+    font-weight: bold;
+    border: solid 2px #6846ec;
+    background-color: #6846ec;
+    color: #FFF;
+    width: 30%;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: 15px;
+}
+
+    .ddl2:hover {
+        background-color: #6846ec;
+        border: 2px solid #6846ec;
+    }
+
+
+.btnFiltrar2 {
+    display: inline-block;
+    background-color: #6846ec;
+    font-weight: 800;
+    color: #fff;
+    padding: 5px;
+    border: 2px solid #6846ec;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 5px;
+    margin-bottom: 8px;
+    margin-top: 20px;
+    height: 40px;
+    font-family: Poppins;
+    float: right;
+    width: 20%;
+}
+
+    .btnFiltrar2:hover {
+        background-color: #2bebc8;
+        color: #151718;
+        border: 2px solid #2bebc8;
+        border-radius: 5px;
+    }
+
+.dosporzona .titulo{
+    color: white;
+    display: block;
+    margin: 0;
+    padding: 10px 0 10px 0;
+}
+
+.btnBuscar {
+    display: inline-block;
+    background-color: #6846ec;
+    font-weight: 800;
+    color: #FFF;
+    padding: 10px;
+    border: 2px solid #6846ec;
+    border-radius: 5px;
+    font-size: 18px;
+    height: 55px;
+    float: right;
+    font-family: Poppins;
+    margin-top: 16px;
+    width: 25%;
+}
+
+    .btnBuscar:hover {
+        background-color: #151718;
+        color: #2bebc8;
+        border: 2px solid #151718;
+        border-radius: 5px;
+    }
+
+.dosporzona img {
+    display: inline;
+    float: right;
+    color: #FFF;
+    width: 300px;
+    height: 270px;
+    object-fit: contain;
+    animation-name: floatimg;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floatimg {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, -0px);
+    }
+}
+
+
+.dosporzona h1{
+    font-size:28px;
+    color: #2bebc8;
+    background-color: #151718;
+    padding: 10px;
+    border-radius: 5px;
+    width: 54%;
+    text-align: left;
+}

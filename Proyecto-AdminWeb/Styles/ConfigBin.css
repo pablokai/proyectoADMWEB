@@ -1,0 +1,94 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+:root {
+    --MORADO: #6846ec;
+    --VERDE: #2bebc8;
+    --NEGROCLARO: #27292d;
+    --NEGROINTERMEDIO: #1e1f23;
+    --NEGROOSCURO: #151718;
+    --NEGROPURO: #0d0c0f;
+    /*OPCIONAL*/
+    --GRIS: #6a6a6a;
+    --BLANCO: #FFF;
+    --ROJO: #e10049;
+}
+
+
+
+.unoporzona {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+.unocompleto {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 30%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+    height: 400px;
+}
+
+.unoportres {
+    background: var(--NEGROCLARO);
+    color: #FFF;
+    padding: 20px;
+    width: 60%;
+    margin: 20px;
+    font-weight: 500;
+    box-sizing: border-box;
+    border: 3px solid #27292d;
+    border-radius: 5px;
+    height: 400px;
+}
+.box {
+    left: auto;
+    color: whitesmoke;
+    width: 250px;
+    height: 30px;
+    background: #38393a;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid 2px #38393a;
+    font-family: Poppins,sans-serif;
+}
+
+.boxb {
+    left: auto;
+    color: whitesmoke;
+    width: 400px;
+    height: 30px;
+    background: #38393a;
+    border-radius: 5px;
+    font-size: 15px;
+    border: solid 2px #38393a;
+    font-family: Poppins,sans-serif;
+}
+.btn {
+    left: auto;
+    color: whitesmoke;
+    font-family: Poppins ,sans-serif;
+    height: 50px;
+    background: #6846ec;
+    margin-top: 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+    border-radius: 6px;
+    border-color: #6846ec;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-weight: 700;
+    display: block;
+}
+
+    .btn:hover {
+        background: #2bebc8;
+        border-color: #2bebc8;
+        color: #000000;
+    }

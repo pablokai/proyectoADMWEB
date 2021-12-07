@@ -59,6 +59,11 @@ namespace Proyecto_AdminWeb
 
         protected void imgbtnsetting_Click(object sender, ImageClickEventArgs e)
         {
+            Response.Redirect("../PagesDirector/Director_ConfigB.aspx");
+        }
+
+        protected void btnUser_Click(object sender, ImageClickEventArgs e)
+        {
             Response.Redirect("../PagesDirector/config.aspx");
         }
     }
